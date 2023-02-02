@@ -43,6 +43,7 @@
             this.vincitaDopoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.puntiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mostraLogoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.informazioniSulProgrammaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.count3 = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.mostraLogoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -133,7 +133,7 @@
             this.giocatoriToolStripMenuItem1,
             this.giocatoriToolStripMenuItem2});
             this.numeroUtentiToolStripMenuItem.Name = "numeroUtentiToolStripMenuItem";
-            this.numeroUtentiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.numeroUtentiToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.numeroUtentiToolStripMenuItem.Text = "Numero giocatori";
             // 
             // giocatoriToolStripMenuItem
@@ -159,7 +159,7 @@
             // temaColoratoToolStripMenuItem
             // 
             this.temaColoratoToolStripMenuItem.Name = "temaColoratoToolStripMenuItem";
-            this.temaColoratoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.temaColoratoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.temaColoratoToolStripMenuItem.Text = "Tema colorato";
             // 
             // vincitaDopoToolStripMenuItem
@@ -168,7 +168,7 @@
             this.toolStripTextBox1,
             this.puntiToolStripMenuItem});
             this.vincitaDopoToolStripMenuItem.Name = "vincitaDopoToolStripMenuItem";
-            this.vincitaDopoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vincitaDopoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.vincitaDopoToolStripMenuItem.Text = "Vincita dopo";
             // 
             // toolStripTextBox1
@@ -183,6 +183,15 @@
             this.puntiToolStripMenuItem.Name = "puntiToolStripMenuItem";
             this.puntiToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.puntiToolStripMenuItem.Text = "punti";
+            // 
+            // mostraLogoToolStripMenuItem
+            // 
+            this.mostraLogoToolStripMenuItem.Checked = true;
+            this.mostraLogoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.mostraLogoToolStripMenuItem.Name = "mostraLogoToolStripMenuItem";
+            this.mostraLogoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.mostraLogoToolStripMenuItem.Text = "Mostra logo";
+            this.mostraLogoToolStripMenuItem.Click += new System.EventHandler(this.mostraLogoToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -316,6 +325,7 @@
             this.button3.TabIndex = 13;
             this.button3.Text = "▼";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -327,6 +337,7 @@
             this.button4.TabIndex = 12;
             this.button4.Text = "▲";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -338,6 +349,7 @@
             this.button5.TabIndex = 15;
             this.button5.Text = "▼";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -349,6 +361,7 @@
             this.button6.TabIndex = 14;
             this.button6.Text = "▲";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -360,6 +373,7 @@
             this.button7.TabIndex = 17;
             this.button7.Text = "▼";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -371,6 +385,7 @@
             this.button8.TabIndex = 16;
             this.button8.Text = "▲";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // pictureBox1
             // 
@@ -382,15 +397,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
-            // 
-            // mostraLogoToolStripMenuItem
-            // 
-            this.mostraLogoToolStripMenuItem.Checked = true;
-            this.mostraLogoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.mostraLogoToolStripMenuItem.Name = "mostraLogoToolStripMenuItem";
-            this.mostraLogoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.mostraLogoToolStripMenuItem.Text = "Mostra logo";
-            this.mostraLogoToolStripMenuItem.Click += new System.EventHandler(this.mostraLogoToolStripMenuItem_Click);
             // 
             // Form1
             // 

@@ -46,5 +46,59 @@ namespace contatore_deluxe_dotnet
                 this.BackgroundImage = null;
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (player3Count + 1 <= 999)
+            {
+                player3Count++;
+                count3.Text = player3Count.ToString("000");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (player3Count - 1 != -1)
+            {
+                player3Count--;
+                count3.Text = player3Count.ToString("000");
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (player2Count + 1 <= 999)
+            {
+                player2Count++;
+                count2.Text = player2Count.ToString("000");
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (player2Count - 1 != -1)
+            {
+                player2Count--;
+                count2.Text = player2Count.ToString("000");
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (player4Count + 1 <= 999)
+            {
+                player4Count++;
+                count4.Text = player4Count.ToString("000");
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (player4Count - 1 != -1)
+            {
+                player4Count--;
+                count4.Text = player4Count.ToString("000");
+            }
+        }
     }
 }
