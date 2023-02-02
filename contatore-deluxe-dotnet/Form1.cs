@@ -100,5 +100,45 @@ namespace contatore_deluxe_dotnet
                 count4.Text = player4Count.ToString("000");
             }
         }
+
+        private void g1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            button1_Click(sender, e);
+        }
+
+        private void g1ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            button2_Click(sender, e);
+        }
+
+        private void g2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            button6_Click(sender, e);
+        }
+
+        private void g2ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            button5_Click(sender, e);
+        }
+
+        private void g3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            button4_Click(sender, e);
+        }
+
+        private void g3ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            button3_Click(sender, e);
+        }
+
+        private void g4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            button8_Click(sender, e);
+        }
+
+        private void g4ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            button7_Click(sender, e);
+        }
     }
 }
