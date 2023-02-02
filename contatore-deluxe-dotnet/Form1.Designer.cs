@@ -39,12 +39,16 @@
             this.giocatoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giocatoriToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.giocatoriToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.temaColoratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vincitaDopoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.puntiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.informazioniSulProgrammaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.count3 = new System.Windows.Forms.Label();
+            this.count2 = new System.Windows.Forms.Label();
+            this.count4 = new System.Windows.Forms.Label();
+            this.count1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -57,8 +61,10 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.temaColoratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.mostraLogoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -70,7 +76,7 @@
             this.toolStripMenuItem2});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(626, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1064, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -85,7 +91,7 @@
             // azzeraToolStripMenuItem
             // 
             this.azzeraToolStripMenuItem.Name = "azzeraToolStripMenuItem";
-            this.azzeraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.azzeraToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.azzeraToolStripMenuItem.Text = "Azzera";
             // 
             // toolStripMenuItem1
@@ -113,7 +119,9 @@
             // 
             this.impostazioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.numeroUtentiToolStripMenuItem,
-            this.temaColoratoToolStripMenuItem});
+            this.temaColoratoToolStripMenuItem,
+            this.vincitaDopoToolStripMenuItem,
+            this.mostraLogoToolStripMenuItem});
             this.impostazioniToolStripMenuItem.Name = "impostazioniToolStripMenuItem";
             this.impostazioniToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.impostazioniToolStripMenuItem.Text = "Impostazioni";
@@ -148,6 +156,34 @@
             this.giocatoriToolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
             this.giocatoriToolStripMenuItem2.Text = "4 Giocatori";
             // 
+            // temaColoratoToolStripMenuItem
+            // 
+            this.temaColoratoToolStripMenuItem.Name = "temaColoratoToolStripMenuItem";
+            this.temaColoratoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.temaColoratoToolStripMenuItem.Text = "Tema colorato";
+            // 
+            // vincitaDopoToolStripMenuItem
+            // 
+            this.vincitaDopoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripTextBox1,
+            this.puntiToolStripMenuItem});
+            this.vincitaDopoToolStripMenuItem.Name = "vincitaDopoToolStripMenuItem";
+            this.vincitaDopoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vincitaDopoToolStripMenuItem.Text = "Vincita dopo";
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox1.Text = "20";
+            // 
+            // puntiToolStripMenuItem
+            // 
+            this.puntiToolStripMenuItem.Enabled = false;
+            this.puntiToolStripMenuItem.Name = "puntiToolStripMenuItem";
+            this.puntiToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.puntiToolStripMenuItem.Text = "punti";
+            // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -162,55 +198,55 @@
             this.informazioniSulProgrammaToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.informazioniSulProgrammaToolStripMenuItem.Text = "Informazioni sul programma";
             // 
-            // label1
+            // count3
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 99.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(16, 349);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 175);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "0";
+            this.count3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.count3.AutoSize = true;
+            this.count3.Font = new System.Drawing.Font("Segoe UI", 99.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.count3.Location = new System.Drawing.Point(-19, 493);
+            this.count3.Name = "count3";
+            this.count3.Size = new System.Drawing.Size(305, 175);
+            this.count3.TabIndex = 1;
+            this.count3.Text = "000";
             // 
-            // label3
+            // count2
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 99.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(470, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 175);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "0";
+            this.count2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.count2.AutoSize = true;
+            this.count2.Font = new System.Drawing.Font("Segoe UI", 99.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.count2.Location = new System.Drawing.Point(801, 24);
+            this.count2.Name = "count2";
+            this.count2.Size = new System.Drawing.Size(305, 175);
+            this.count2.TabIndex = 3;
+            this.count2.Text = "000";
             // 
-            // label4
+            // count4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 99.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(463, 349);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(151, 175);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "0";
+            this.count4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.count4.AutoSize = true;
+            this.count4.Font = new System.Drawing.Font("Segoe UI", 99.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.count4.Location = new System.Drawing.Point(801, 493);
+            this.count4.Name = "count4";
+            this.count4.Size = new System.Drawing.Size(305, 175);
+            this.count4.TabIndex = 4;
+            this.count4.Text = "000";
             // 
-            // label5
+            // count1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 99.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(19, 24);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(151, 175);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "0";
+            this.count1.AutoSize = true;
+            this.count1.Font = new System.Drawing.Font("Segoe UI", 99.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.count1.Location = new System.Drawing.Point(-19, 24);
+            this.count1.Name = "count1";
+            this.count1.Size = new System.Drawing.Size(305, 175);
+            this.count1.TabIndex = 5;
+            this.count1.Text = "000";
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.textBox1.Location = new System.Drawing.Point(12, 176);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 33);
+            this.textBox1.Size = new System.Drawing.Size(219, 33);
             this.textBox1.TabIndex = 6;
             this.textBox1.Text = "Giocatore 1";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -219,9 +255,9 @@
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(12, 349);
+            this.textBox2.Location = new System.Drawing.Point(12, 493);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(151, 33);
+            this.textBox2.Size = new System.Drawing.Size(219, 33);
             this.textBox2.TabIndex = 7;
             this.textBox2.Text = "Giocatore 3";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -230,9 +266,9 @@
             // 
             this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(463, 349);
+            this.textBox3.Location = new System.Drawing.Point(833, 493);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(151, 33);
+            this.textBox3.Size = new System.Drawing.Size(219, 33);
             this.textBox3.TabIndex = 9;
             this.textBox3.Text = "Giocatore 4";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -241,9 +277,9 @@
             // 
             this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(463, 176);
+            this.textBox4.Location = new System.Drawing.Point(833, 179);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(151, 33);
+            this.textBox4.Size = new System.Drawing.Size(219, 33);
             this.textBox4.TabIndex = 8;
             this.textBox4.Text = "Giocatore 2";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -253,92 +289,117 @@
             this.button1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.Location = new System.Drawing.Point(12, 215);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 42);
+            this.button1.Size = new System.Drawing.Size(99, 39);
             this.button1.TabIndex = 10;
             this.button1.Text = "▲";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(88, 215);
+            this.button2.Location = new System.Drawing.Point(132, 215);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 42);
+            this.button2.Size = new System.Drawing.Size(99, 39);
             this.button2.TabIndex = 11;
             this.button2.Text = "▼";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(88, 304);
+            this.button3.Location = new System.Drawing.Point(132, 451);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 42);
+            this.button3.Size = new System.Drawing.Size(99, 39);
             this.button3.TabIndex = 13;
             this.button3.Text = "▼";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(12, 304);
+            this.button4.Location = new System.Drawing.Point(12, 451);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 42);
+            this.button4.Size = new System.Drawing.Size(99, 39);
             this.button4.TabIndex = 12;
             this.button4.Text = "▲";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(539, 215);
+            this.button5.Location = new System.Drawing.Point(953, 221);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 42);
+            this.button5.Size = new System.Drawing.Size(99, 39);
             this.button5.TabIndex = 15;
             this.button5.Text = "▼";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button6.Location = new System.Drawing.Point(463, 215);
+            this.button6.Location = new System.Drawing.Point(833, 221);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 42);
+            this.button6.Size = new System.Drawing.Size(99, 39);
             this.button6.TabIndex = 14;
             this.button6.Text = "▲";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button7.Location = new System.Drawing.Point(539, 304);
+            this.button7.Location = new System.Drawing.Point(953, 451);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 42);
+            this.button7.Size = new System.Drawing.Size(99, 39);
             this.button7.TabIndex = 17;
             this.button7.Text = "▼";
             this.button7.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button8.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button8.Location = new System.Drawing.Point(463, 304);
+            this.button8.Location = new System.Drawing.Point(833, 451);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 42);
+            this.button8.Size = new System.Drawing.Size(99, 39);
             this.button8.TabIndex = 16;
             this.button8.Text = "▲";
             this.button8.UseVisualStyleBackColor = true;
             // 
-            // temaColoratoToolStripMenuItem
+            // pictureBox1
             // 
-            this.temaColoratoToolStripMenuItem.Name = "temaColoratoToolStripMenuItem";
-            this.temaColoratoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.temaColoratoToolStripMenuItem.Text = "Tema colorato";
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::contatore_deluxe_dotnet.Properties.Resources.logo_large;
+            this.pictureBox1.Location = new System.Drawing.Point(833, 644);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(219, 24);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // mostraLogoToolStripMenuItem
+            // 
+            this.mostraLogoToolStripMenuItem.Checked = true;
+            this.mostraLogoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.mostraLogoToolStripMenuItem.Name = "mostraLogoToolStripMenuItem";
+            this.mostraLogoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mostraLogoToolStripMenuItem.Text = "Mostra logo";
+            this.mostraLogoToolStripMenuItem.Click += new System.EventHandler(this.mostraLogoToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 533);
+            this.BackgroundImage = global::contatore_deluxe_dotnet.Properties.Resources.contatoredeluxe;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(1064, 677);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button5);
@@ -351,17 +412,20 @@
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.count1);
+            this.Controls.Add(this.count4);
+            this.Controls.Add(this.count2);
+            this.Controls.Add(this.count3);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.MinimumSize = new System.Drawing.Size(1080, 716);
             this.Name = "Form1";
             this.Text = "ALEGSOFTWARE CONTATORE DELUXE";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,10 +446,10 @@
         private ToolStripMenuItem giocatoriToolStripMenuItem;
         private ToolStripMenuItem giocatoriToolStripMenuItem1;
         private ToolStripMenuItem giocatoriToolStripMenuItem2;
-        private Label label1;
-        private Label label3;
-        private Label label4;
-        private Label label5;
+        private Label count3;
+        private Label count2;
+        private Label count4;
+        private Label count1;
         private TextBox textBox1;
         private TextBox textBox2;
         private TextBox textBox3;
@@ -399,5 +463,10 @@
         private Button button6;
         private Button button7;
         private Button button8;
+        private ToolStripMenuItem vincitaDopoToolStripMenuItem;
+        private ToolStripTextBox toolStripTextBox1;
+        private ToolStripMenuItem puntiToolStripMenuItem;
+        private PictureBox pictureBox1;
+        private ToolStripMenuItem mostraLogoToolStripMenuItem;
     }
 }
