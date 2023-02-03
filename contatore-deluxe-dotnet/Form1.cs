@@ -1,3 +1,5 @@
+using System.Diagnostics.Contracts;
+
 namespace contatore_deluxe_dotnet
 {
     public partial class Form1 : Form
@@ -156,6 +158,61 @@ namespace contatore_deluxe_dotnet
             count2.Text = player2Count.ToString("000");
             count3.Text = player3Count.ToString("000");
             count4.Text = player4Count.ToString("000");
+        }
+
+        private void temaColoratoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            temaColoratoToolStripMenuItem.Checked = !temaColoratoToolStripMenuItem.Checked;
+            if (temaColoratoToolStripMenuItem.Checked)
+            {
+                count1.ForeColor = Color.Blue;
+                count2.ForeColor = Color.Red;
+                count3.ForeColor = Color.LimeGreen;
+                count4.ForeColor = Color.DarkViolet;
+                player1TextBox.ForeColor = Color.Blue;
+                player2TextBox.ForeColor = Color.Red;
+                player3TextBox.ForeColor = Color.LimeGreen;
+                player4TextBox.ForeColor = Color.DarkViolet;
+                player1Up.ForeColor = Color.Blue;
+                player1Down.ForeColor = Color.Blue;
+                player2Up.ForeColor = Color.Red;
+                player2Down.ForeColor = Color.Red;
+                player3Up.ForeColor = Color.LimeGreen;
+                player3Down.ForeColor = Color.LimeGreen;
+                player4Up.ForeColor = Color.DarkViolet;
+                player4Down.ForeColor = Color.DarkViolet;
+            }
+            else
+            {
+                count1.ForeColor = Color.Black;
+                count2.ForeColor = Color.Black;
+                count3.ForeColor = Color.Black;
+                count4.ForeColor = Color.Black;
+                player1TextBox.ForeColor = Color.Black;
+                player2TextBox.ForeColor = Color.Black;
+                player3TextBox.ForeColor = Color.Black;
+                player4TextBox.ForeColor = Color.Black;
+                player1Up.ForeColor = Color.Black;
+                player1Down.ForeColor = Color.Black;
+                player2Up.ForeColor = Color.Black;
+                player2Down.ForeColor = Color.Black;
+                player3Up.ForeColor = Color.Black;
+                player3Down.ForeColor = Color.Black;
+                player4Up.ForeColor = Color.Black;
+                player4Down.ForeColor = Color.Black;
+            }
+            void changePlayerCount(int players)
+            {
+                switch (players)
+                {
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                }
+            }
         }
     }
 }

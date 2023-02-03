@@ -60,18 +60,18 @@
             this.count2 = new System.Windows.Forms.Label();
             this.count4 = new System.Windows.Forms.Label();
             this.count1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.player1TextBox = new System.Windows.Forms.TextBox();
+            this.player3TextBox = new System.Windows.Forms.TextBox();
+            this.player4TextBox = new System.Windows.Forms.TextBox();
+            this.player2TextBox = new System.Windows.Forms.TextBox();
+            this.player1Up = new System.Windows.Forms.Button();
+            this.player1Down = new System.Windows.Forms.Button();
+            this.player3Down = new System.Windows.Forms.Button();
+            this.player3Up = new System.Windows.Forms.Button();
+            this.player2Down = new System.Windows.Forms.Button();
+            this.player2Up = new System.Windows.Forms.Button();
+            this.player4Down = new System.Windows.Forms.Button();
+            this.player4Up = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -171,9 +171,12 @@
             // 
             // temaColoratoToolStripMenuItem
             // 
+            this.temaColoratoToolStripMenuItem.Checked = true;
+            this.temaColoratoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.temaColoratoToolStripMenuItem.Name = "temaColoratoToolStripMenuItem";
             this.temaColoratoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.temaColoratoToolStripMenuItem.Text = "Tema colorato";
+            this.temaColoratoToolStripMenuItem.Click += new System.EventHandler(this.temaColoratoToolStripMenuItem_Click);
             // 
             // vincitaDopoToolStripMenuItem
             // 
@@ -312,6 +315,7 @@
             this.count3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.count3.AutoSize = true;
             this.count3.Font = new System.Drawing.Font("Segoe UI", 99.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.count3.ForeColor = System.Drawing.Color.LimeGreen;
             this.count3.Location = new System.Drawing.Point(-19, 493);
             this.count3.Name = "count3";
             this.count3.Size = new System.Drawing.Size(305, 175);
@@ -323,6 +327,7 @@
             this.count2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.count2.AutoSize = true;
             this.count2.Font = new System.Drawing.Font("Segoe UI", 99.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.count2.ForeColor = System.Drawing.Color.Red;
             this.count2.Location = new System.Drawing.Point(801, 24);
             this.count2.Name = "count2";
             this.count2.Size = new System.Drawing.Size(305, 175);
@@ -334,6 +339,7 @@
             this.count4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.count4.AutoSize = true;
             this.count4.Font = new System.Drawing.Font("Segoe UI", 99.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.count4.ForeColor = System.Drawing.Color.DarkViolet;
             this.count4.Location = new System.Drawing.Point(801, 493);
             this.count4.Name = "count4";
             this.count4.Size = new System.Drawing.Size(305, 175);
@@ -344,152 +350,161 @@
             // 
             this.count1.AutoSize = true;
             this.count1.Font = new System.Drawing.Font("Segoe UI", 99.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.count1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.count1.ForeColor = System.Drawing.Color.Blue;
             this.count1.Location = new System.Drawing.Point(-19, 24);
             this.count1.Name = "count1";
             this.count1.Size = new System.Drawing.Size(305, 175);
             this.count1.TabIndex = 5;
             this.count1.Text = "000";
             // 
-            // textBox1
+            // player1TextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.textBox1.Location = new System.Drawing.Point(12, 176);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(219, 33);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = "Giocatore 1";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.player1TextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.player1TextBox.ForeColor = System.Drawing.Color.Blue;
+            this.player1TextBox.Location = new System.Drawing.Point(12, 176);
+            this.player1TextBox.Name = "player1TextBox";
+            this.player1TextBox.Size = new System.Drawing.Size(219, 33);
+            this.player1TextBox.TabIndex = 6;
+            this.player1TextBox.Text = "Giocatore 1";
+            this.player1TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // player3TextBox
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(12, 493);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(219, 33);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.Text = "Giocatore 3";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.player3TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.player3TextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.player3TextBox.ForeColor = System.Drawing.Color.LimeGreen;
+            this.player3TextBox.Location = new System.Drawing.Point(12, 493);
+            this.player3TextBox.Name = "player3TextBox";
+            this.player3TextBox.Size = new System.Drawing.Size(219, 33);
+            this.player3TextBox.TabIndex = 7;
+            this.player3TextBox.Text = "Giocatore 3";
+            this.player3TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox3
+            // player4TextBox
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(833, 493);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(219, 33);
-            this.textBox3.TabIndex = 9;
-            this.textBox3.Text = "Giocatore 4";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.player4TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.player4TextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.player4TextBox.ForeColor = System.Drawing.Color.DarkViolet;
+            this.player4TextBox.Location = new System.Drawing.Point(833, 493);
+            this.player4TextBox.Name = "player4TextBox";
+            this.player4TextBox.Size = new System.Drawing.Size(219, 33);
+            this.player4TextBox.TabIndex = 9;
+            this.player4TextBox.Text = "Giocatore 4";
+            this.player4TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox4
+            // player2TextBox
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox4.Location = new System.Drawing.Point(833, 179);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(219, 33);
-            this.textBox4.TabIndex = 8;
-            this.textBox4.Text = "Giocatore 2";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.player2TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.player2TextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.player2TextBox.ForeColor = System.Drawing.Color.Red;
+            this.player2TextBox.Location = new System.Drawing.Point(833, 179);
+            this.player2TextBox.Name = "player2TextBox";
+            this.player2TextBox.Size = new System.Drawing.Size(219, 33);
+            this.player2TextBox.TabIndex = 8;
+            this.player2TextBox.Text = "Giocatore 2";
+            this.player2TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button1
+            // player1Up
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button1.Location = new System.Drawing.Point(12, 215);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 39);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "▲";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.player1Up.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.player1Up.ForeColor = System.Drawing.Color.Blue;
+            this.player1Up.Location = new System.Drawing.Point(12, 215);
+            this.player1Up.Name = "player1Up";
+            this.player1Up.Size = new System.Drawing.Size(99, 39);
+            this.player1Up.TabIndex = 10;
+            this.player1Up.Text = "▲";
+            this.player1Up.UseVisualStyleBackColor = true;
+            this.player1Up.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // player1Down
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button2.Location = new System.Drawing.Point(132, 215);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 39);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "▼";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.player1Down.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.player1Down.ForeColor = System.Drawing.Color.Blue;
+            this.player1Down.Location = new System.Drawing.Point(132, 215);
+            this.player1Down.Name = "player1Down";
+            this.player1Down.Size = new System.Drawing.Size(99, 39);
+            this.player1Down.TabIndex = 11;
+            this.player1Down.Text = "▼";
+            this.player1Down.UseVisualStyleBackColor = true;
+            this.player1Down.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // player3Down
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(132, 451);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 39);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "▼";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.player3Down.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.player3Down.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.player3Down.ForeColor = System.Drawing.Color.LimeGreen;
+            this.player3Down.Location = new System.Drawing.Point(132, 451);
+            this.player3Down.Name = "player3Down";
+            this.player3Down.Size = new System.Drawing.Size(99, 39);
+            this.player3Down.TabIndex = 13;
+            this.player3Down.Text = "▼";
+            this.player3Down.UseVisualStyleBackColor = true;
+            this.player3Down.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // player3Up
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(12, 451);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(99, 39);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "▲";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.player3Up.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.player3Up.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.player3Up.ForeColor = System.Drawing.Color.LimeGreen;
+            this.player3Up.Location = new System.Drawing.Point(12, 451);
+            this.player3Up.Name = "player3Up";
+            this.player3Up.Size = new System.Drawing.Size(99, 39);
+            this.player3Up.TabIndex = 12;
+            this.player3Up.Text = "▲";
+            this.player3Up.UseVisualStyleBackColor = true;
+            this.player3Up.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // player2Down
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(953, 221);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(99, 39);
-            this.button5.TabIndex = 15;
-            this.button5.Text = "▼";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.player2Down.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.player2Down.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.player2Down.ForeColor = System.Drawing.Color.Red;
+            this.player2Down.Location = new System.Drawing.Point(953, 221);
+            this.player2Down.Name = "player2Down";
+            this.player2Down.Size = new System.Drawing.Size(99, 39);
+            this.player2Down.TabIndex = 15;
+            this.player2Down.Text = "▼";
+            this.player2Down.UseVisualStyleBackColor = true;
+            this.player2Down.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button6
+            // player2Up
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button6.Location = new System.Drawing.Point(833, 221);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(99, 39);
-            this.button6.TabIndex = 14;
-            this.button6.Text = "▲";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.player2Up.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.player2Up.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.player2Up.ForeColor = System.Drawing.Color.Red;
+            this.player2Up.Location = new System.Drawing.Point(833, 221);
+            this.player2Up.Name = "player2Up";
+            this.player2Up.Size = new System.Drawing.Size(99, 39);
+            this.player2Up.TabIndex = 14;
+            this.player2Up.Text = "▲";
+            this.player2Up.UseVisualStyleBackColor = true;
+            this.player2Up.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button7
+            // player4Down
             // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button7.Location = new System.Drawing.Point(953, 451);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(99, 39);
-            this.button7.TabIndex = 17;
-            this.button7.Text = "▼";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.player4Down.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.player4Down.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.player4Down.ForeColor = System.Drawing.Color.DarkViolet;
+            this.player4Down.Location = new System.Drawing.Point(953, 451);
+            this.player4Down.Name = "player4Down";
+            this.player4Down.Size = new System.Drawing.Size(99, 39);
+            this.player4Down.TabIndex = 17;
+            this.player4Down.Text = "▼";
+            this.player4Down.UseVisualStyleBackColor = true;
+            this.player4Down.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button8
+            // player4Up
             // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button8.Location = new System.Drawing.Point(833, 451);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(99, 39);
-            this.button8.TabIndex = 16;
-            this.button8.Text = "▲";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.player4Up.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.player4Up.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.player4Up.ForeColor = System.Drawing.Color.DarkViolet;
+            this.player4Up.Location = new System.Drawing.Point(833, 451);
+            this.player4Up.Name = "player4Up";
+            this.player4Up.Size = new System.Drawing.Size(99, 39);
+            this.player4Up.TabIndex = 16;
+            this.player4Up.Text = "▲";
+            this.player4Up.UseVisualStyleBackColor = true;
+            this.player4Up.Click += new System.EventHandler(this.button8_Click);
             // 
             // pictureBox1
             // 
@@ -511,18 +526,18 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1064, 677);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.player4Down);
+            this.Controls.Add(this.player4Up);
+            this.Controls.Add(this.player2Down);
+            this.Controls.Add(this.player2Up);
+            this.Controls.Add(this.player3Down);
+            this.Controls.Add(this.player3Up);
+            this.Controls.Add(this.player1Down);
+            this.Controls.Add(this.player1Up);
+            this.Controls.Add(this.player4TextBox);
+            this.Controls.Add(this.player2TextBox);
+            this.Controls.Add(this.player3TextBox);
+            this.Controls.Add(this.player1TextBox);
             this.Controls.Add(this.count1);
             this.Controls.Add(this.count4);
             this.Controls.Add(this.count2);
@@ -561,19 +576,19 @@
         private Label count2;
         private Label count4;
         private Label count1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private Button button1;
-        private Button button2;
+        private TextBox player1TextBox;
+        private TextBox player3TextBox;
+        private TextBox player4TextBox;
+        private TextBox player2TextBox;
+        private Button player1Up;
+        private Button player1Down;
         private ToolStripMenuItem temaColoratoToolStripMenuItem;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
-        private Button button7;
-        private Button button8;
+        private Button player3Down;
+        private Button player3Up;
+        private Button player2Down;
+        private Button player2Up;
+        private Button player4Down;
+        private Button player4Up;
         private ToolStripMenuItem vincitaDopoToolStripMenuItem;
         private ToolStripTextBox toolStripTextBox1;
         private ToolStripMenuItem puntiToolStripMenuItem;
