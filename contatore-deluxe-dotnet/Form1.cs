@@ -13,6 +13,7 @@ namespace contatore_deluxe_dotnet
         int player2Count;
         int player3Count;
         int player4Count;
+        int winnerThreshold = 20;
         private void Form1_Load(object sender, EventArgs e)
         {
             
@@ -321,6 +322,23 @@ namespace contatore_deluxe_dotnet
                 this.FormBorderStyle = FormBorderStyle.Sizable;
                 this.WindowState = FormWindowState.Normal;
             }
+        }
+
+        private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (toolStripTextBox1.Text != "")
+            {
+                try
+                {
+                    winnerThreshold = Convert.ToInt32(toolStripTextBox1.Text);
+                }
+                catch
+                {
+                    toolStripTextBox1.Text = winnerThreshold.ToString();
+                }
+            }
+            
+            
         }
     }
 }

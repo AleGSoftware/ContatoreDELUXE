@@ -32,18 +32,19 @@
             this.partitaCorrenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.azzeraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.caricaPartitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.esportaPartitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impostazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.temaColoratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mostraLogoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.numeroUtentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giocatoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giocatoriToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.giocatoriToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.temaColoratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vincitaDopoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.puntiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mostraLogoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.schermoInteroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.informazioniSulProgrammaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -74,7 +75,6 @@
             this.player4Down = new System.Windows.Forms.Button();
             this.player4Up = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.esportaPartitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -106,7 +106,7 @@
             // 
             this.azzeraToolStripMenuItem.Name = "azzeraToolStripMenuItem";
             this.azzeraToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F10;
-            this.azzeraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.azzeraToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.azzeraToolStripMenuItem.Text = "Azzera";
             this.azzeraToolStripMenuItem.Click += new System.EventHandler(this.azzeraToolStripMenuItem_Click);
             // 
@@ -120,6 +120,13 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(87, 20);
             this.toolStripMenuItem1.Text = "File di partita";
             // 
+            // caricaPartitaToolStripMenuItem
+            // 
+            this.caricaPartitaToolStripMenuItem.Name = "caricaPartitaToolStripMenuItem";
+            this.caricaPartitaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.caricaPartitaToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.caricaPartitaToolStripMenuItem.Text = "Apri partita...";
+            // 
             // cToolStripMenuItem
             // 
             this.cToolStripMenuItem.Name = "cToolStripMenuItem";
@@ -127,12 +134,12 @@
             this.cToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.cToolStripMenuItem.Text = "Salva partita...";
             // 
-            // caricaPartitaToolStripMenuItem
+            // esportaPartitaToolStripMenuItem
             // 
-            this.caricaPartitaToolStripMenuItem.Name = "caricaPartitaToolStripMenuItem";
-            this.caricaPartitaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.caricaPartitaToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.caricaPartitaToolStripMenuItem.Text = "Apri partita...";
+            this.esportaPartitaToolStripMenuItem.Name = "esportaPartitaToolStripMenuItem";
+            this.esportaPartitaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this.esportaPartitaToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.esportaPartitaToolStripMenuItem.Text = "Esporta partita...";
             // 
             // impostazioniToolStripMenuItem
             // 
@@ -145,6 +152,24 @@
             this.impostazioniToolStripMenuItem.Name = "impostazioniToolStripMenuItem";
             this.impostazioniToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.impostazioniToolStripMenuItem.Text = "Impostazioni";
+            // 
+            // temaColoratoToolStripMenuItem
+            // 
+            this.temaColoratoToolStripMenuItem.Checked = true;
+            this.temaColoratoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.temaColoratoToolStripMenuItem.Name = "temaColoratoToolStripMenuItem";
+            this.temaColoratoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.temaColoratoToolStripMenuItem.Text = "Tema colorato";
+            this.temaColoratoToolStripMenuItem.Click += new System.EventHandler(this.temaColoratoToolStripMenuItem_Click);
+            // 
+            // mostraLogoToolStripMenuItem
+            // 
+            this.mostraLogoToolStripMenuItem.Checked = true;
+            this.mostraLogoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.mostraLogoToolStripMenuItem.Name = "mostraLogoToolStripMenuItem";
+            this.mostraLogoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mostraLogoToolStripMenuItem.Text = "Mostra logo";
+            this.mostraLogoToolStripMenuItem.Click += new System.EventHandler(this.mostraLogoToolStripMenuItem_Click);
             // 
             // numeroUtentiToolStripMenuItem
             // 
@@ -179,15 +204,6 @@
             this.giocatoriToolStripMenuItem2.Text = "4 Giocatori";
             this.giocatoriToolStripMenuItem2.Click += new System.EventHandler(this.giocatoriToolStripMenuItem2_Click);
             // 
-            // temaColoratoToolStripMenuItem
-            // 
-            this.temaColoratoToolStripMenuItem.Checked = true;
-            this.temaColoratoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.temaColoratoToolStripMenuItem.Name = "temaColoratoToolStripMenuItem";
-            this.temaColoratoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.temaColoratoToolStripMenuItem.Text = "Tema colorato";
-            this.temaColoratoToolStripMenuItem.Click += new System.EventHandler(this.temaColoratoToolStripMenuItem_Click);
-            // 
             // vincitaDopoToolStripMenuItem
             // 
             this.vincitaDopoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -202,6 +218,7 @@
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
             this.toolStripTextBox1.Text = "20";
+            this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
             // 
             // puntiToolStripMenuItem
             // 
@@ -209,15 +226,6 @@
             this.puntiToolStripMenuItem.Name = "puntiToolStripMenuItem";
             this.puntiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.puntiToolStripMenuItem.Text = "punti";
-            // 
-            // mostraLogoToolStripMenuItem
-            // 
-            this.mostraLogoToolStripMenuItem.Checked = true;
-            this.mostraLogoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.mostraLogoToolStripMenuItem.Name = "mostraLogoToolStripMenuItem";
-            this.mostraLogoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.mostraLogoToolStripMenuItem.Text = "Mostra logo";
-            this.mostraLogoToolStripMenuItem.Click += new System.EventHandler(this.mostraLogoToolStripMenuItem_Click);
             // 
             // schermoInteroToolStripMenuItem
             // 
@@ -534,13 +542,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
-            // 
-            // esportaPartitaToolStripMenuItem
-            // 
-            this.esportaPartitaToolStripMenuItem.Name = "esportaPartitaToolStripMenuItem";
-            this.esportaPartitaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.esportaPartitaToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.esportaPartitaToolStripMenuItem.Text = "Esporta partita...";
             // 
             // Form1
             // 
