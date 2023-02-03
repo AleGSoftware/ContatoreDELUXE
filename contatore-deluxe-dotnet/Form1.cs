@@ -1,4 +1,5 @@
 using System.Diagnostics.Contracts;
+using System.Text.Json;
 
 namespace contatore_deluxe_dotnet
 {
@@ -9,7 +10,11 @@ namespace contatore_deluxe_dotnet
         public Form1()
         {
             InitializeComponent();
-            
+            if (buildType != "Beta")
+            {
+                debugToolStripMenuItem.Visible = false;
+            }
+
         }
         int player1Count;
         int player2Count;
@@ -17,6 +22,7 @@ namespace contatore_deluxe_dotnet
         int player4Count;
         int winnerThreshold = 20;
         string Winner = "";
+        string actionHistory = "";
         private void Form1_Load(object sender, EventArgs e)
         {
             
@@ -51,6 +57,7 @@ namespace contatore_deluxe_dotnet
                 count3.Text = player3Count.ToString("000");
                 count4.Text = player4Count.ToString("000");
             }
+            actionHistory += "P" + player.ToString() + "W.";
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -58,6 +65,7 @@ namespace contatore_deluxe_dotnet
             {
                 player1Count++;
                 count1.Text = player1Count.ToString("000");
+                actionHistory += "P1A.";
             }
             if (player1Count >= winnerThreshold)
             {
@@ -71,6 +79,8 @@ namespace contatore_deluxe_dotnet
             if (player1Count - 1 != -1){
                 player1Count--;
                 count1.Text = player1Count.ToString("000");
+                actionHistory += "P1R.";
+
             }
         }
 
@@ -100,6 +110,8 @@ namespace contatore_deluxe_dotnet
             {
                 player3Count++;
                 count3.Text = player3Count.ToString("000");
+                actionHistory += "P3A.";
+
             }
             if (player3Count >= winnerThreshold)
             {
@@ -113,6 +125,8 @@ namespace contatore_deluxe_dotnet
             {
                 player3Count--;
                 count3.Text = player3Count.ToString("000");
+                actionHistory += "P3R.";
+
             }
         }
 
@@ -122,6 +136,8 @@ namespace contatore_deluxe_dotnet
             {
                 player2Count++;
                 count2.Text = player2Count.ToString("000");
+                actionHistory += "P2A.";
+
             }
             if (player1Count >= winnerThreshold)
             {
@@ -135,6 +151,7 @@ namespace contatore_deluxe_dotnet
             {
                 player2Count--;
                 count2.Text = player2Count.ToString("000");
+                actionHistory += "P2R.";
             }
         }
 
@@ -144,10 +161,13 @@ namespace contatore_deluxe_dotnet
             {
                 player4Count++;
                 count4.Text = player4Count.ToString("000");
-                if (player1Count >= winnerThreshold)
-                {
-                    showWinScreen(4);
-                }
+                actionHistory += "P4A.";
+
+
+            }
+            if (player1Count >= winnerThreshold)
+            {
+                showWinScreen(4);
             }
         }
 
@@ -157,6 +177,8 @@ namespace contatore_deluxe_dotnet
             {
                 player4Count--;
                 count4.Text = player4Count.ToString("000");
+                actionHistory += "P4R.";
+
             }
         }
 
@@ -428,6 +450,188 @@ namespace contatore_deluxe_dotnet
         {
             var about = new AboutForm(programVersion, buildType);
             about.Show();
+        }
+
+        private void caricaPartitaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+            loadFile(openFileDialog1.FileName);
+        }
+
+        private void cToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.ShowDialog();
+            saveFile(saveFileDialog1.FileName);
+        }
+        void saveFile(string filePath)
+        {
+            TextWriter fileSaver = new StreamWriter(filePath);
+
+
+            fileSaver.WriteLine("copyrightalegsoftware");
+            fileSaver.WriteLine("ctdlxe_file");
+            fileSaver.WriteLine(programVersion);
+            fileSaver.WriteLine(buildType);
+            fileSaver.WriteLine(temaColoratoToolStripMenuItem.Checked);
+            fileSaver.WriteLine(mostraLogoToolStripMenuItem.Checked);
+            fileSaver.WriteLine(giocatoriToolStripMenuItem.Checked);
+            fileSaver.WriteLine(giocatoriToolStripMenuItem1.Checked);
+            fileSaver.WriteLine(giocatoriToolStripMenuItem2.Checked);
+            fileSaver.WriteLine(winnerThreshold);
+            fileSaver.WriteLine(player1Count);
+            fileSaver.WriteLine(player2Count);
+            fileSaver.WriteLine(player3Count);
+            fileSaver.WriteLine(player4Count);
+            fileSaver.WriteLine(player1TextBox.Text);
+            fileSaver.WriteLine(player2TextBox.Text);
+            fileSaver.WriteLine(player3TextBox.Text);
+            fileSaver.WriteLine(player4TextBox.Text);
+            fileSaver.WriteLine(actionHistory);
+            fileSaver.WriteLine("copyrightalegsoftware");
+            fileSaver.WriteLine("endoffile-endoffile");
+            fileSaver.Close();
+        }
+        void loadFile(string filePath)
+        {
+            TextReader fileLoader = new StreamReader(filePath);
+            try
+            {
+                string copyrightFile = fileLoader.ReadLine();
+                string fileType = fileLoader.ReadLine();
+
+                if (copyrightFile == "copyrightalegsoftware" && fileType == "ctdlxe_file")
+                {
+                    string originalVersion = fileLoader.ReadLine();
+                    string originalBuildType = fileLoader.ReadLine();
+                    bool temaColorato = Convert.ToBoolean(fileLoader.ReadLine());
+                    bool mostraLogo = Convert.ToBoolean(fileLoader.ReadLine());
+                    bool players_2 = Convert.ToBoolean(fileLoader.ReadLine());
+                    bool players_3 = Convert.ToBoolean(fileLoader.ReadLine());
+                    bool players_4 = Convert.ToBoolean(fileLoader.ReadLine());
+                    int winnerThresholdFile = Convert.ToInt32(fileLoader.ReadLine());
+                    int player1CountFile = Convert.ToInt32(fileLoader.ReadLine());
+                    int player2CountFile = Convert.ToInt32(fileLoader.ReadLine());
+                    int player3CountFile = Convert.ToInt32(fileLoader.ReadLine());
+                    int player4CountFile = Convert.ToInt32(fileLoader.ReadLine());
+                    string player1NameFile = fileLoader.ReadLine();
+                    string player2NameFile = fileLoader.ReadLine();
+                    string player3NameFile = fileLoader.ReadLine();
+                    string player4NameFile = fileLoader.ReadLine();
+                    string actionHistoryFile = fileLoader.ReadLine();
+                    fileLoader.Close();
+                    int playerCountFile = 0;
+                    if (players_2)
+                    {
+                        playerCountFile = 2;
+                    } else if (players_3)
+                    {
+                        playerCountFile = 3;
+                    } else if (players_4)
+                    {
+                        playerCountFile = 4;
+                    }
+                        
+                    var result = MessageBox.Show($"Caricato file: {filePath}\n" +
+                        $"Versione ContatoreDELUXE: {originalBuildType} {originalVersion}\n" +
+                        $"Tema colorato abilitato: {temaColorato.ToString()}\n" +
+                        $"Mostra logo ContatoreDELUXE: {mostraLogo.ToString()}\n" +
+                        $"Numero giocatori: {playerCountFile.ToString()}\n" +
+                        $"Si vince a: {winnerThresholdFile.ToString()}\n" +
+                        $"Giocatore 1: {player1NameFile} con {player1CountFile.ToString()}\n" +
+                        $"Giocatore 2: {player2NameFile} con {player2CountFile.ToString()}\n" +
+                        $"Giocatore 3: {player3NameFile} con {player3CountFile.ToString()}\n" +
+                        $"Giocatore 4: {player4NameFile} con {player4CountFile.ToString()}\n" +
+                        $"Si vuole caricare il file e sovrascrivere la partita in corso?", "Caricamento file riuscito.", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.Yes)
+                    {
+                        player1Count = player1CountFile;
+                        count1.Text = player1CountFile.ToString("000");
+                        player1TextBox.Text = player1NameFile;
+                        player2Count = player2CountFile;
+                        count2.Text = player2CountFile.ToString("000");
+                        player2TextBox.Text = player2NameFile;
+                        player3Count = player3CountFile;
+                        count3.Text = player3CountFile.ToString("000");
+                        player3TextBox.Text = player3NameFile;
+                        player4Count = player4CountFile;
+                        count4.Text = player4CountFile.ToString("000");
+                        player4TextBox.Text = player4NameFile;
+                        temaColoratoToolStripMenuItem.Checked = temaColorato;
+                        if (temaColoratoToolStripMenuItem.Checked)
+                        {
+                            count1.ForeColor = Color.Blue;
+                            count2.ForeColor = Color.Red;
+                            count3.ForeColor = Color.LimeGreen;
+                            count4.ForeColor = Color.DarkViolet;
+                            player1TextBox.ForeColor = Color.Blue;
+                            player2TextBox.ForeColor = Color.Red;
+                            player3TextBox.ForeColor = Color.LimeGreen;
+                            player4TextBox.ForeColor = Color.DarkViolet;
+                            player1Up.ForeColor = Color.Blue;
+                            player1Down.ForeColor = Color.Blue;
+                            player2Up.ForeColor = Color.Red;
+                            player2Down.ForeColor = Color.Red;
+                            player3Up.ForeColor = Color.LimeGreen;
+                            player3Down.ForeColor = Color.LimeGreen;
+                            player4Up.ForeColor = Color.DarkViolet;
+                            player4Down.ForeColor = Color.DarkViolet;
+                        }
+                        else
+                        {
+                            count1.ForeColor = Color.Black;
+                            count2.ForeColor = Color.Black;
+                            count3.ForeColor = Color.Black;
+                            count4.ForeColor = Color.Black;
+                            player1TextBox.ForeColor = Color.Black;
+                            player2TextBox.ForeColor = Color.Black;
+                            player3TextBox.ForeColor = Color.Black;
+                            player4TextBox.ForeColor = Color.Black;
+                            player1Up.ForeColor = Color.Black;
+                            player1Down.ForeColor = Color.Black;
+                            player2Up.ForeColor = Color.Black;
+                            player2Down.ForeColor = Color.Black;
+                            player3Up.ForeColor = Color.Black;
+                            player3Down.ForeColor = Color.Black;
+                            player4Up.ForeColor = Color.Black;
+                            player4Down.ForeColor = Color.Black;
+                        }
+                        changePlayerCount(playerCountFile);
+                        mostraLogoToolStripMenuItem.Checked = mostraLogo;
+                        if (mostraLogoToolStripMenuItem.Checked)
+                        {
+                            if (giocatoriToolStripMenuItem.Checked)
+                            {
+                                this.BackgroundImage = Properties.Resources.contatoredeluxe_small;
+                            }
+                            else if (giocatoriToolStripMenuItem1.Checked || giocatoriToolStripMenuItem2.Checked)
+                            {
+                                this.BackgroundImage = Properties.Resources.contatoredeluxe;
+                            }
+                        }
+                        else
+                        {
+                            this.BackgroundImage = null;
+                        }
+                        actionHistory = actionHistoryFile;
+                        toolStripTextBox1.Text = winnerThresholdFile.ToString(); ;
+                        winnerThreshold = winnerThresholdFile;
+                    }
+                }
+                else
+                {
+                    fileLoader.Close();
+                    MessageBox.Show($"Impossibile caricare il file {filePath}.\nMotivo: file non corretto", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch
+            {
+                MessageBox.Show($"Impossibile caricare il file {filePath}.\nMotivo: errore non riconosciuto", "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+        private void stampaActionHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(actionHistory);
         }
     }
 }

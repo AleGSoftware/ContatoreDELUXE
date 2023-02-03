@@ -58,6 +58,8 @@
             this.g4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.g4ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.advancedControlToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stampaActionHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.count3 = new System.Windows.Forms.Label();
             this.count2 = new System.Windows.Forms.Label();
             this.count4 = new System.Windows.Forms.Label();
@@ -75,6 +77,8 @@
             this.player4Down = new System.Windows.Forms.Button();
             this.player4Up = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +90,8 @@
             this.toolStripMenuItem1,
             this.impostazioniToolStripMenuItem,
             this.toolStripMenuItem2,
-            this.advancedControlToolStripMenuItem});
+            this.advancedControlToolStripMenuItem,
+            this.debugToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1064, 24);
@@ -126,6 +131,7 @@
             this.caricaPartitaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.caricaPartitaToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.caricaPartitaToolStripMenuItem.Text = "Apri partita...";
+            this.caricaPartitaToolStripMenuItem.Click += new System.EventHandler(this.caricaPartitaToolStripMenuItem_Click);
             // 
             // cToolStripMenuItem
             // 
@@ -133,6 +139,7 @@
             this.cToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.cToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.cToolStripMenuItem.Text = "Salva partita...";
+            this.cToolStripMenuItem.Click += new System.EventHandler(this.cToolStripMenuItem_Click);
             // 
             // esportaPartitaToolStripMenuItem
             // 
@@ -184,14 +191,14 @@
             // giocatoriToolStripMenuItem
             // 
             this.giocatoriToolStripMenuItem.Name = "giocatoriToolStripMenuItem";
-            this.giocatoriToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.giocatoriToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.giocatoriToolStripMenuItem.Text = "2 Giocatori";
             this.giocatoriToolStripMenuItem.Click += new System.EventHandler(this.giocatoriToolStripMenuItem_Click);
             // 
             // giocatoriToolStripMenuItem1
             // 
             this.giocatoriToolStripMenuItem1.Name = "giocatoriToolStripMenuItem1";
-            this.giocatoriToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.giocatoriToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.giocatoriToolStripMenuItem1.Text = "3 Giocatori";
             this.giocatoriToolStripMenuItem1.Click += new System.EventHandler(this.giocatoriToolStripMenuItem1_Click);
             // 
@@ -200,7 +207,7 @@
             this.giocatoriToolStripMenuItem2.Checked = true;
             this.giocatoriToolStripMenuItem2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.giocatoriToolStripMenuItem2.Name = "giocatoriToolStripMenuItem2";
-            this.giocatoriToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.giocatoriToolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
             this.giocatoriToolStripMenuItem2.Text = "4 Giocatori";
             this.giocatoriToolStripMenuItem2.Click += new System.EventHandler(this.giocatoriToolStripMenuItem2_Click);
             // 
@@ -224,7 +231,7 @@
             // 
             this.puntiToolStripMenuItem.Enabled = false;
             this.puntiToolStripMenuItem.Name = "puntiToolStripMenuItem";
-            this.puntiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.puntiToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.puntiToolStripMenuItem.Text = "punti";
             // 
             // schermoInteroToolStripMenuItem
@@ -336,6 +343,21 @@
             this.advancedControlToolStripMenuItem1.Name = "advancedControlToolStripMenuItem1";
             this.advancedControlToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
             this.advancedControlToolStripMenuItem1.Text = "AdvancedControl";
+            // 
+            // debugToolStripMenuItem
+            // 
+            this.debugToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stampaActionHistoryToolStripMenuItem});
+            this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
+            this.debugToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.debugToolStripMenuItem.Text = "Debug";
+            // 
+            // stampaActionHistoryToolStripMenuItem
+            // 
+            this.stampaActionHistoryToolStripMenuItem.Name = "stampaActionHistoryToolStripMenuItem";
+            this.stampaActionHistoryToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.stampaActionHistoryToolStripMenuItem.Text = "Stampa actionHistory";
+            this.stampaActionHistoryToolStripMenuItem.Click += new System.EventHandler(this.stampaActionHistoryToolStripMenuItem_Click);
             // 
             // count3
             // 
@@ -544,6 +566,14 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Filter = "ContatoreDELUXE|*.ctdlxe";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "ContatoreDELUXE|*.ctdlxe";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -633,5 +663,9 @@
         private ToolStripMenuItem advancedControlToolStripMenuItem1;
         private ToolStripMenuItem schermoInteroToolStripMenuItem;
         private ToolStripMenuItem esportaPartitaToolStripMenuItem;
+        private OpenFileDialog openFileDialog1;
+        private SaveFileDialog saveFileDialog1;
+        private ToolStripMenuItem debugToolStripMenuItem;
+        private ToolStripMenuItem stampaActionHistoryToolStripMenuItem;
     }
 }
