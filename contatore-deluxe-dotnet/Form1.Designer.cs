@@ -224,7 +224,7 @@
             // 
             this.puntiToolStripMenuItem.Enabled = false;
             this.puntiToolStripMenuItem.Name = "puntiToolStripMenuItem";
-            this.puntiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.puntiToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.puntiToolStripMenuItem.Text = "punti";
             // 
             // schermoInteroToolStripMenuItem
@@ -248,6 +248,7 @@
             this.informazioniSulProgrammaToolStripMenuItem.Name = "informazioniSulProgrammaToolStripMenuItem";
             this.informazioniSulProgrammaToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.informazioniSulProgrammaToolStripMenuItem.Text = "Informazioni sul programma";
+            this.informazioniSulProgrammaToolStripMenuItem.Click += new System.EventHandler(this.informazioniSulProgrammaToolStripMenuItem_Click);
             // 
             // advancedControlToolStripMenuItem
             // 
@@ -573,7 +574,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(1080, 716);
             this.Name = "Form1";
-            this.Text = "ALEGSOFTWARE CONTATORE DELUXE";
+            this.Text = "AleGSoftware ContatoreDELUXE";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

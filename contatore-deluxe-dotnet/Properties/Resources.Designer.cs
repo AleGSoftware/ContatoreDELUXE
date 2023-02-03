@@ -81,6 +81,25 @@ namespace contatore_deluxe_dotnet.Properties {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a {\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        ///{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+        ///\widowctrl\hyphauto
+        ///
+        ///{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 GNU GENERAL PUBLIC LICENSE\par}
+        ///{\pard \ql \f0 \sa180 \li0 \fi0 Version 3, 29 June 2007\par}
+        ///{\pard \ql \f0 \sa180 \li0 \fi0 Copyright \u169? 2007 Free Software Foundation, Inc. &lt;{\field{\*\fldinst{HYPERLINK &quot;https://fsf.org/&quot;}}{\fldrslt{\ul
+        ///https://fsf.org/
+        ///}}}
+        ///&gt;\par}
+        ///{\pard \ql \f0 \sa180 \li0 \fi0 Everyone is permitted to co [stringa troncata]&quot;;.
+        /// </summary>
+        internal static string gpl_3_0 {
+            get {
+                return ResourceManager.GetString("gpl_3_0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap logo_large {

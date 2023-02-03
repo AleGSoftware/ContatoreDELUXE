@@ -244,6 +244,40 @@ namespace contatore_deluxe_dotnet
                     }
                     break;
                 case 3:
+                    schermoInteroToolStripMenuItem.Checked = false;
+                    this.WindowState = FormWindowState.Normal;
+                    this.FormBorderStyle = FormBorderStyle.Sizable;
+                    if (this.MinimumSize == new Size(1080, 346))
+                    {
+                        this.Size = new Size(1080, 346);
+                    }
+                    else
+                    {
+                        this.Size = new Size(1080, 716);
+                    }
+                    count3.Visible = true;
+                    player3Down.Visible = true;
+                    player3Up.Visible = true;
+                    player3TextBox.Visible = true;
+                    count4.Visible = false;
+                    player4Down.Visible = false;
+                    player4Up.Visible = false;
+                    player4TextBox.Visible = false;
+
+                    count1.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+                    count2.Anchor = AnchorStyles.Right | AnchorStyles.Top;
+                    player1TextBox.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+                    player2TextBox.Anchor = AnchorStyles.Right | AnchorStyles.Top;
+                    player1Up.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+                    player1Down.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+                    player2Up.Anchor = AnchorStyles.Right | AnchorStyles.Top;
+                    player2Down.Anchor = AnchorStyles.Right | AnchorStyles.Top;
+                    if (mostraLogoToolStripMenuItem.Checked)
+                    {
+                        this.BackgroundImage = Properties.Resources.contatoredeluxe;
+                    }
+                    this.MinimumSize = new Size(1080, 716);
+                    this.Size = new Size(1080, 716);
                     break;
                 case 4:
                     schermoInteroToolStripMenuItem.Checked = false;
@@ -339,6 +373,12 @@ namespace contatore_deluxe_dotnet
             }
             
             
+        }
+
+        private void informazioniSulProgrammaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var about = new AboutForm();
+            about.Show();
         }
     }
 }

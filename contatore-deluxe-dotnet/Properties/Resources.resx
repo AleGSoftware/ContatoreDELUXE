@@ -124,6 +124,9 @@
   <data name="contatoredeluxe_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\contatoredeluxe-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="gpl_3_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gpl-3.0.rtf;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
   <data name="logo_large" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_large.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
