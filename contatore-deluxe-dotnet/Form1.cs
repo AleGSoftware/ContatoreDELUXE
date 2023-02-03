@@ -140,5 +140,22 @@ namespace contatore_deluxe_dotnet
         {
             button7_Click(sender, e);
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void azzeraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            player1Count = 0;
+            player2Count = 0;
+            player3Count = 0;
+            player4Count = 0;
+            count1.Text = player1Count.ToString("000");
+            count2.Text = player2Count.ToString("000");
+            count3.Text = player3Count.ToString("000");
+            count4.Text = player4Count.ToString("000");
+        }
     }
 }
