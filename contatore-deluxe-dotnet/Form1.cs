@@ -201,18 +201,52 @@ namespace contatore_deluxe_dotnet
                 player4Up.ForeColor = Color.Black;
                 player4Down.ForeColor = Color.Black;
             }
-            void changePlayerCount(int players)
+            
+        }
+        void changePlayerCount(int players)
+        {
+            switch (players)
             {
-                switch (players)
-                {
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    case 4:
-                        break;
-                }
+                case 2:
+                    count3.Visible = false;
+                    player3Down.Visible = false;
+                    player3Up.Visible = false;
+                    player3TextBox.Visible = false;
+                    count4.Visible = false;
+                    player4Down.Visible = false;
+                    player4Up.Visible = false;
+                    player4TextBox.Visible = false;
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
             }
+        }
+
+        private void giocatoriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            giocatoriToolStripMenuItem.Checked = true;
+            giocatoriToolStripMenuItem2.Checked = false;
+            giocatoriToolStripMenuItem1.Checked = false;
+            changePlayerCount(2);
+            
+        }
+
+        private void giocatoriToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            giocatoriToolStripMenuItem.Checked = false;
+            giocatoriToolStripMenuItem2.Checked = false;
+            giocatoriToolStripMenuItem1.Checked = true;
+            changePlayerCount(3);
+        }
+
+        private void giocatoriToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            giocatoriToolStripMenuItem.Checked = false;
+            giocatoriToolStripMenuItem2.Checked = true;
+            giocatoriToolStripMenuItem1.Checked = false;
+            changePlayerCount(4);
         }
     }
 }

@@ -146,7 +146,7 @@
             this.giocatoriToolStripMenuItem1,
             this.giocatoriToolStripMenuItem2});
             this.numeroUtentiToolStripMenuItem.Name = "numeroUtentiToolStripMenuItem";
-            this.numeroUtentiToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.numeroUtentiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.numeroUtentiToolStripMenuItem.Text = "Numero giocatori";
             // 
             // giocatoriToolStripMenuItem
@@ -154,27 +154,30 @@
             this.giocatoriToolStripMenuItem.Checked = true;
             this.giocatoriToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.giocatoriToolStripMenuItem.Name = "giocatoriToolStripMenuItem";
-            this.giocatoriToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.giocatoriToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.giocatoriToolStripMenuItem.Text = "2 Giocatori";
+            this.giocatoriToolStripMenuItem.Click += new System.EventHandler(this.giocatoriToolStripMenuItem_Click);
             // 
             // giocatoriToolStripMenuItem1
             // 
             this.giocatoriToolStripMenuItem1.Name = "giocatoriToolStripMenuItem1";
-            this.giocatoriToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
+            this.giocatoriToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.giocatoriToolStripMenuItem1.Text = "3 Giocatori";
+            this.giocatoriToolStripMenuItem1.Click += new System.EventHandler(this.giocatoriToolStripMenuItem1_Click);
             // 
             // giocatoriToolStripMenuItem2
             // 
             this.giocatoriToolStripMenuItem2.Name = "giocatoriToolStripMenuItem2";
-            this.giocatoriToolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
+            this.giocatoriToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.giocatoriToolStripMenuItem2.Text = "4 Giocatori";
+            this.giocatoriToolStripMenuItem2.Click += new System.EventHandler(this.giocatoriToolStripMenuItem2_Click);
             // 
             // temaColoratoToolStripMenuItem
             // 
             this.temaColoratoToolStripMenuItem.Checked = true;
             this.temaColoratoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.temaColoratoToolStripMenuItem.Name = "temaColoratoToolStripMenuItem";
-            this.temaColoratoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.temaColoratoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.temaColoratoToolStripMenuItem.Text = "Tema colorato";
             this.temaColoratoToolStripMenuItem.Click += new System.EventHandler(this.temaColoratoToolStripMenuItem_Click);
             // 
@@ -184,7 +187,7 @@
             this.toolStripTextBox1,
             this.puntiToolStripMenuItem});
             this.vincitaDopoToolStripMenuItem.Name = "vincitaDopoToolStripMenuItem";
-            this.vincitaDopoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.vincitaDopoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.vincitaDopoToolStripMenuItem.Text = "Vincita dopo";
             // 
             // toolStripTextBox1
@@ -205,7 +208,7 @@
             this.mostraLogoToolStripMenuItem.Checked = true;
             this.mostraLogoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.mostraLogoToolStripMenuItem.Name = "mostraLogoToolStripMenuItem";
-            this.mostraLogoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.mostraLogoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mostraLogoToolStripMenuItem.Text = "Mostra logo";
             this.mostraLogoToolStripMenuItem.Click += new System.EventHandler(this.mostraLogoToolStripMenuItem_Click);
             // 
