@@ -73,6 +73,16 @@ namespace contatore_deluxe_dotnet.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap contatoredeluxe_small {
+            get {
+                object obj = ResourceManager.GetObject("contatoredeluxe_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_large {
             get {
                 object obj = ResourceManager.GetObject("logo_large", resourceCulture);

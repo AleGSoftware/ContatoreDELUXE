@@ -151,8 +151,6 @@
             // 
             // giocatoriToolStripMenuItem
             // 
-            this.giocatoriToolStripMenuItem.Checked = true;
-            this.giocatoriToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.giocatoriToolStripMenuItem.Name = "giocatoriToolStripMenuItem";
             this.giocatoriToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.giocatoriToolStripMenuItem.Text = "2 Giocatori";
@@ -167,6 +165,8 @@
             // 
             // giocatoriToolStripMenuItem2
             // 
+            this.giocatoriToolStripMenuItem2.Checked = true;
+            this.giocatoriToolStripMenuItem2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.giocatoriToolStripMenuItem2.Name = "giocatoriToolStripMenuItem2";
             this.giocatoriToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.giocatoriToolStripMenuItem2.Text = "4 Giocatori";
@@ -548,7 +548,6 @@
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.MinimumSize = new System.Drawing.Size(1080, 716);
             this.Name = "Form1";
             this.Text = "ALEGSOFTWARE CONTATORE DELUXE";
             this.Load += new System.EventHandler(this.Form1_Load);

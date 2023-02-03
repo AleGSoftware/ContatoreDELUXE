@@ -208,6 +208,8 @@ namespace contatore_deluxe_dotnet
             switch (players)
             {
                 case 2:
+                    this.Size = new Size(1080, 716);
+                    this.WindowState = FormWindowState.Normal;
                     count3.Visible = false;
                     player3Down.Visible = false;
                     player3Up.Visible = false;
@@ -216,10 +218,49 @@ namespace contatore_deluxe_dotnet
                     player4Down.Visible = false;
                     player4Up.Visible = false;
                     player4TextBox.Visible = false;
+                    this.MinimumSize = new Size(1080, 346);
+                    this.Size = new Size(1080, 346);
+                    count1.Anchor = AnchorStyles.Left;
+                    count2.Anchor = AnchorStyles.Right;
+                    player1TextBox.Anchor = AnchorStyles.Left;
+                    player2TextBox.Anchor = AnchorStyles.Right;
+                    player1Up.Anchor = AnchorStyles.Left;
+                    player1Down.Anchor = AnchorStyles.Left;
+                    player2Up.Anchor = AnchorStyles.Right;
+                    player2Down.Anchor = AnchorStyles.Right;
+                    this.BackgroundImage = Properties.Resources.contatoredeluxe_small;
                     break;
                 case 3:
                     break;
                 case 4:
+                    this.WindowState = FormWindowState.Normal;
+                    if (this.MinimumSize == new Size(1080, 346))
+                    {
+                        this.Size = new Size(1080, 346);       
+                    } else
+                    {
+                        this.Size = new Size(1080, 716);
+                    }
+                    count3.Visible = true;
+                    player3Down.Visible = true;
+                    player3Up.Visible = true;
+                    player3TextBox.Visible = true;
+                    count4.Visible = true;
+                    player4Down.Visible = true;
+                    player4Up.Visible = true;
+                    player4TextBox.Visible = true;
+                    
+                    count1.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+                    count2.Anchor = AnchorStyles.Right | AnchorStyles.Top;
+                    player1TextBox.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+                    player2TextBox.Anchor = AnchorStyles.Right | AnchorStyles.Top;
+                    player1Up.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+                    player1Down.Anchor = AnchorStyles.Left | AnchorStyles.Top;
+                    player2Up.Anchor = AnchorStyles.Right | AnchorStyles.Top;
+                    player2Down.Anchor = AnchorStyles.Right | AnchorStyles.Top;
+                    this.BackgroundImage = Properties.Resources.contatoredeluxe;
+                    this.MinimumSize = new Size(1080, 716);
+                    this.Size = new Size(1080, 716);
                     break;
             }
         }
