@@ -16,7 +16,7 @@ namespace contatore_deluxe_dotnet
         int player3Count;
         int player4Count;
         int winnerThreshold = 20;
-        string Winner;
+        string Winner = "";
         private void Form1_Load(object sender, EventArgs e)
         {
             
@@ -39,7 +39,18 @@ namespace contatore_deluxe_dotnet
                     break;
 
             }
-            MessageBox.Show($"Il vincitore della partita è {Winner} (Giocatore {player.ToString()})\nVuoi azzerare la partita?", "Vincitore della partita", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            var messageBoxResult = MessageBox.Show($"Il vincitore della partita è {Winner} (Giocatore {player.ToString()})\nVuoi azzerare la partita?", "Vincitore della partita", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            if (messageBoxResult == DialogResult.Yes)
+            {
+                player1Count = 0;
+                player2Count = 0;
+                player3Count = 0;
+                player4Count = 0;
+                count1.Text = player1Count.ToString("000");
+                count2.Text = player2Count.ToString("000");
+                count3.Text = player3Count.ToString("000");
+                count4.Text = player4Count.ToString("000");
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {
