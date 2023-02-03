@@ -41,7 +41,14 @@ namespace contatore_deluxe_dotnet
             mostraLogoToolStripMenuItem.Checked = !mostraLogoToolStripMenuItem.Checked;
             if (mostraLogoToolStripMenuItem.Checked)
             {
-                this.BackgroundImage = Properties.Resources.contatoredeluxe;
+                if (giocatoriToolStripMenuItem.Checked)
+                {
+                    this.BackgroundImage = Properties.Resources.contatoredeluxe_small;
+                }
+                else if (giocatoriToolStripMenuItem1.Checked || giocatoriToolStripMenuItem2.Checked)
+                {
+                    this.BackgroundImage = Properties.Resources.contatoredeluxe;
+                }
             }
             else
             {
@@ -208,8 +215,10 @@ namespace contatore_deluxe_dotnet
             switch (players)
             {
                 case 2:
+                    schermoInteroToolStripMenuItem.Checked = false;
                     this.Size = new Size(1080, 716);
                     this.WindowState = FormWindowState.Normal;
+                    this.FormBorderStyle = FormBorderStyle.Sizable;
                     count3.Visible = false;
                     player3Down.Visible = false;
                     player3Up.Visible = false;
@@ -228,12 +237,17 @@ namespace contatore_deluxe_dotnet
                     player1Down.Anchor = AnchorStyles.Left;
                     player2Up.Anchor = AnchorStyles.Right;
                     player2Down.Anchor = AnchorStyles.Right;
-                    this.BackgroundImage = Properties.Resources.contatoredeluxe_small;
+                    if (mostraLogoToolStripMenuItem.Checked)
+                    {
+                        this.BackgroundImage = Properties.Resources.contatoredeluxe_small;
+                    }
                     break;
                 case 3:
                     break;
                 case 4:
+                    schermoInteroToolStripMenuItem.Checked = false;
                     this.WindowState = FormWindowState.Normal;
+                    this.FormBorderStyle = FormBorderStyle.Sizable;
                     if (this.MinimumSize == new Size(1080, 346))
                     {
                         this.Size = new Size(1080, 346);       
@@ -258,7 +272,10 @@ namespace contatore_deluxe_dotnet
                     player1Down.Anchor = AnchorStyles.Left | AnchorStyles.Top;
                     player2Up.Anchor = AnchorStyles.Right | AnchorStyles.Top;
                     player2Down.Anchor = AnchorStyles.Right | AnchorStyles.Top;
-                    this.BackgroundImage = Properties.Resources.contatoredeluxe;
+                    if (mostraLogoToolStripMenuItem.Checked)
+                    {
+                        this.BackgroundImage = Properties.Resources.contatoredeluxe;
+                    }
                     this.MinimumSize = new Size(1080, 716);
                     this.Size = new Size(1080, 716);
                     break;
@@ -288,6 +305,22 @@ namespace contatore_deluxe_dotnet
             giocatoriToolStripMenuItem2.Checked = true;
             giocatoriToolStripMenuItem1.Checked = false;
             changePlayerCount(4);
+        }
+
+        private void schermoInteroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            schermoInteroToolStripMenuItem.Checked = !schermoInteroToolStripMenuItem.Checked;
+            if (schermoInteroToolStripMenuItem.Checked)
+            {
+                this.WindowState = FormWindowState.Normal;
+                this.FormBorderStyle = FormBorderStyle.None;
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.FormBorderStyle = FormBorderStyle.Sizable;
+                this.WindowState = FormWindowState.Normal;
+            }
         }
     }
 }
