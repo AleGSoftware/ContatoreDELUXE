@@ -14,17 +14,41 @@ namespace contatore_deluxe_dotnet
         int player3Count;
         int player4Count;
         int winnerThreshold = 20;
+        string Winner;
         private void Form1_Load(object sender, EventArgs e)
         {
             
         }
+        void showWinScreen(int player)
+        {
+            switch (player)
+            {
+                case 1:
+                    Winner = player1TextBox.Text;
+                    break;
+                case 2:
+                    Winner = player2TextBox.Text;
+                    break;
+                case 3:
+                    Winner = player3TextBox.Text;
+                    break;
+                case 4:
+                    Winner = player4TextBox.Text;
+                    break;
 
+            }
+            MessageBox.Show($"Il vincitore della partita è {Winner} (Giocatore {player.ToString()})\nVuoi azzerare la partita?", "Vincitore della partita", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             if (player1Count + 1 <= 999)
             {
                 player1Count++;
                 count1.Text = player1Count.ToString("000");
+            }
+            if (player1Count >= winnerThreshold)
+            {
+                showWinScreen(1);
             }
             
         }
@@ -64,6 +88,10 @@ namespace contatore_deluxe_dotnet
                 player3Count++;
                 count3.Text = player3Count.ToString("000");
             }
+            if (player3Count >= winnerThreshold)
+            {
+                showWinScreen(3);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -82,6 +110,10 @@ namespace contatore_deluxe_dotnet
                 player2Count++;
                 count2.Text = player2Count.ToString("000");
             }
+            if (player1Count >= winnerThreshold)
+            {
+                showWinScreen(2);
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -99,6 +131,10 @@ namespace contatore_deluxe_dotnet
             {
                 player4Count++;
                 count4.Text = player4Count.ToString("000");
+                if (player1Count >= winnerThreshold)
+                {
+                    showWinScreen(4);
+                }
             }
         }
 
