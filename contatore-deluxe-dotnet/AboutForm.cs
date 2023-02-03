@@ -14,9 +14,10 @@ namespace contatore_deluxe_dotnet
 {
     public partial class AboutForm : Form
     {
-        public AboutForm()
+        public AboutForm(string programVersion, string buildType)
         {
             InitializeComponent();
+            label3.Text = buildType + " " + programVersion;
         }
 
         private void button1_Click(object sender, EventArgs e)

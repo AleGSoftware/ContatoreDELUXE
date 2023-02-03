@@ -184,14 +184,14 @@
             // giocatoriToolStripMenuItem
             // 
             this.giocatoriToolStripMenuItem.Name = "giocatoriToolStripMenuItem";
-            this.giocatoriToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.giocatoriToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.giocatoriToolStripMenuItem.Text = "2 Giocatori";
             this.giocatoriToolStripMenuItem.Click += new System.EventHandler(this.giocatoriToolStripMenuItem_Click);
             // 
             // giocatoriToolStripMenuItem1
             // 
             this.giocatoriToolStripMenuItem1.Name = "giocatoriToolStripMenuItem1";
-            this.giocatoriToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
+            this.giocatoriToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.giocatoriToolStripMenuItem1.Text = "3 Giocatori";
             this.giocatoriToolStripMenuItem1.Click += new System.EventHandler(this.giocatoriToolStripMenuItem1_Click);
             // 
@@ -200,7 +200,7 @@
             this.giocatoriToolStripMenuItem2.Checked = true;
             this.giocatoriToolStripMenuItem2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.giocatoriToolStripMenuItem2.Name = "giocatoriToolStripMenuItem2";
-            this.giocatoriToolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
+            this.giocatoriToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.giocatoriToolStripMenuItem2.Text = "4 Giocatori";
             this.giocatoriToolStripMenuItem2.Click += new System.EventHandler(this.giocatoriToolStripMenuItem2_Click);
             // 
@@ -224,7 +224,7 @@
             // 
             this.puntiToolStripMenuItem.Enabled = false;
             this.puntiToolStripMenuItem.Name = "puntiToolStripMenuItem";
-            this.puntiToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.puntiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.puntiToolStripMenuItem.Text = "punti";
             // 
             // schermoInteroToolStripMenuItem

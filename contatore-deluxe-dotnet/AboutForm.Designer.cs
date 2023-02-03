@@ -51,7 +51,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::contatore_deluxe_dotnet.Properties.Resources.contatoredeluxe_small;
+            this.pictureBox2.Image = global::contatore_deluxe_dotnet.Properties.Resources.contatoredeluxe_transparent_small;
             this.pictureBox2.Location = new System.Drawing.Point(12, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(241, 53);

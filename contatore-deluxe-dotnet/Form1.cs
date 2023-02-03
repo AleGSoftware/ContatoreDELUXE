@@ -4,6 +4,8 @@ namespace contatore_deluxe_dotnet
 {
     public partial class Form1 : Form
     {
+        string programVersion = "1.0";
+        string buildType = "Beta";
         public Form1()
         {
             InitializeComponent();
@@ -413,7 +415,7 @@ namespace contatore_deluxe_dotnet
 
         private void informazioniSulProgrammaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var about = new AboutForm();
+            var about = new AboutForm(programVersion, buildType);
             about.Show();
         }
     }

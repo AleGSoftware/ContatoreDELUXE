@@ -81,6 +81,26 @@ namespace contatore_deluxe_dotnet.Properties {
         }
         
         /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap contatoredeluxe_transparent {
+            get {
+                object obj = ResourceManager.GetObject("contatoredeluxe_transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap contatoredeluxe_transparent_small {
+            get {
+                object obj = ResourceManager.GetObject("contatoredeluxe_transparent_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una stringa localizzata simile a {\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
         ///{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
         ///\widowctrl\hyphauto
