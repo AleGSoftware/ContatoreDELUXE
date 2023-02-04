@@ -30,6 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.partitaCorrenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuovaPartitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.azzeraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.caricaPartitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,16 +103,25 @@
             // partitaCorrenteToolStripMenuItem
             // 
             this.partitaCorrenteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuovaPartitaToolStripMenuItem,
             this.azzeraToolStripMenuItem});
             this.partitaCorrenteToolStripMenuItem.Name = "partitaCorrenteToolStripMenuItem";
             this.partitaCorrenteToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
             this.partitaCorrenteToolStripMenuItem.Text = "Partita corrente";
             // 
+            // nuovaPartitaToolStripMenuItem
+            // 
+            this.nuovaPartitaToolStripMenuItem.Name = "nuovaPartitaToolStripMenuItem";
+            this.nuovaPartitaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.nuovaPartitaToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.nuovaPartitaToolStripMenuItem.Text = "Nuova partita";
+            this.nuovaPartitaToolStripMenuItem.Click += new System.EventHandler(this.nuovaPartitaToolStripMenuItem_Click);
+            // 
             // azzeraToolStripMenuItem
             // 
             this.azzeraToolStripMenuItem.Name = "azzeraToolStripMenuItem";
             this.azzeraToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F10;
-            this.azzeraToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.azzeraToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.azzeraToolStripMenuItem.Text = "Azzera";
             this.azzeraToolStripMenuItem.Click += new System.EventHandler(this.azzeraToolStripMenuItem_Click);
             // 
@@ -151,11 +161,11 @@
             // impostazioniToolStripMenuItem
             // 
             this.impostazioniToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.temaColoratoToolStripMenuItem,
-            this.mostraLogoToolStripMenuItem,
+            this.schermoInteroToolStripMenuItem,
             this.numeroUtentiToolStripMenuItem,
             this.vincitaDopoToolStripMenuItem,
-            this.schermoInteroToolStripMenuItem});
+            this.temaColoratoToolStripMenuItem,
+            this.mostraLogoToolStripMenuItem});
             this.impostazioniToolStripMenuItem.Name = "impostazioniToolStripMenuItem";
             this.impostazioniToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.impostazioniToolStripMenuItem.Text = "Impostazioni";
@@ -191,14 +201,14 @@
             // giocatoriToolStripMenuItem
             // 
             this.giocatoriToolStripMenuItem.Name = "giocatoriToolStripMenuItem";
-            this.giocatoriToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.giocatoriToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.giocatoriToolStripMenuItem.Text = "2 Giocatori";
             this.giocatoriToolStripMenuItem.Click += new System.EventHandler(this.giocatoriToolStripMenuItem_Click);
             // 
             // giocatoriToolStripMenuItem1
             // 
             this.giocatoriToolStripMenuItem1.Name = "giocatoriToolStripMenuItem1";
-            this.giocatoriToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
+            this.giocatoriToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.giocatoriToolStripMenuItem1.Text = "3 Giocatori";
             this.giocatoriToolStripMenuItem1.Click += new System.EventHandler(this.giocatoriToolStripMenuItem1_Click);
             // 
@@ -207,7 +217,7 @@
             this.giocatoriToolStripMenuItem2.Checked = true;
             this.giocatoriToolStripMenuItem2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.giocatoriToolStripMenuItem2.Name = "giocatoriToolStripMenuItem2";
-            this.giocatoriToolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
+            this.giocatoriToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.giocatoriToolStripMenuItem2.Text = "4 Giocatori";
             this.giocatoriToolStripMenuItem2.Click += new System.EventHandler(this.giocatoriToolStripMenuItem2_Click);
             // 
@@ -231,7 +241,7 @@
             // 
             this.puntiToolStripMenuItem.Enabled = false;
             this.puntiToolStripMenuItem.Name = "puntiToolStripMenuItem";
-            this.puntiToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.puntiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.puntiToolStripMenuItem.Text = "punti";
             // 
             // schermoInteroToolStripMenuItem
@@ -667,5 +677,6 @@
         private SaveFileDialog saveFileDialog1;
         private ToolStripMenuItem debugToolStripMenuItem;
         private ToolStripMenuItem stampaActionHistoryToolStripMenuItem;
+        private ToolStripMenuItem nuovaPartitaToolStripMenuItem;
     }
 }

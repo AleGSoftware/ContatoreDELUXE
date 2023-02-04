@@ -6,10 +6,8 @@ namespace contatore_deluxe_dotnet
     public partial class Form1 : Form
     {
         string programVersion = "1.0";
-        string buildType = "Release";
+        string buildType = "Beta";
         string[] devBuilds = new string[] {"Developement", "Release Candidate", "Beta", "Master", "Alpha"};
-        // create a string array
-        
         public Form1()
         {
             InitializeComponent();
@@ -240,6 +238,7 @@ namespace contatore_deluxe_dotnet
             count2.Text = player2Count.ToString("000");
             count3.Text = player3Count.ToString("000");
             count4.Text = player4Count.ToString("000");
+            actionHistory = "";
         }
 
         private void temaColoratoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -647,6 +646,40 @@ namespace contatore_deluxe_dotnet
         private void stampaActionHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show(actionHistory);
+        }
+
+        private void nuovaPartitaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            changePlayerCount(4);
+            this.BackgroundImage = Properties.Resources.contatoredeluxe;
+            count1.ForeColor = Color.Blue;
+            count2.ForeColor = Color.Red;
+            count3.ForeColor = Color.LimeGreen;
+            count4.ForeColor = Color.DarkViolet;
+            player1TextBox.ForeColor = Color.Blue;
+            player2TextBox.ForeColor = Color.Red;
+            player3TextBox.ForeColor = Color.LimeGreen;
+            player4TextBox.ForeColor = Color.DarkViolet;
+            player1Up.ForeColor = Color.Blue;
+            player1Down.ForeColor = Color.Blue;
+            player2Up.ForeColor = Color.Red;
+            player2Down.ForeColor = Color.Red;
+            player3Up.ForeColor = Color.LimeGreen;
+            player3Down.ForeColor = Color.LimeGreen;
+            player4Up.ForeColor = Color.DarkViolet;
+            player4Down.ForeColor = Color.DarkViolet;
+            azzeraToolStripMenuItem_Click(sender, e);
+            player1TextBox.Text = "Giocatore 1";
+            player2TextBox.Text = "Giocatore 2";
+            player3TextBox.Text = "Giocatore 3";
+            player4TextBox.Text = "Giocatore 4";
+            winnerThreshold = 20;
+            toolStripTextBox1.Text = 20.ToString();
+            giocatoriToolStripMenuItem.Checked = false;
+            giocatoriToolStripMenuItem1.Checked = false;
+            giocatoriToolStripMenuItem2.Checked = true;
+            temaColoratoToolStripMenuItem.Checked = true;
+            mostraLogoToolStripMenuItem.Checked = true;
         }
     }
 }
