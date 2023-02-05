@@ -12,6 +12,7 @@
     <Title>ContatoreDELUXE</Title>
     <AssemblyName>ContatoreDELUXE</AssemblyName>
     <Copyright>© 2023 AleGSoftware</Copyright>
+    <NeutralLanguage>it</NeutralLanguage>
   </PropertyGroup>
 
   <ItemGroup>
