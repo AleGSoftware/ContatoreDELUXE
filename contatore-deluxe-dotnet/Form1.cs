@@ -8,12 +8,19 @@ namespace contatore_deluxe_dotnet
         string programVersion = "1.0";
         string buildType = "Beta";
         string[] devBuilds = new string[] {"Developement", "Release Candidate", "Beta", "Master", "Alpha"};
+        
         public Form1()
         {
             InitializeComponent();
             if (!((IList<string>)devBuilds).Contains(buildType))
             {
                 debugToolStripMenuItem.Visible = false;
+                label1.Visible = false;
+            } else
+            {
+                debugToolStripMenuItem.Visible = true;
+                label1.Visible = true;
+                label1.Text = buildType;
             }
 
         }
@@ -456,14 +463,32 @@ namespace contatore_deluxe_dotnet
 
         private void caricaPartitaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
-            loadFile(openFileDialog1.FileName);
+            try
+            {
+                openFileDialog1.ShowDialog();
+                loadFile(openFileDialog1.FileName);
+
+
+            }
+            catch
+            {
+
+            }
         }
 
         private void cToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.ShowDialog();
-            saveFile(saveFileDialog1.FileName);
+            try
+            {
+                saveFileDialog1.ShowDialog();
+                saveFile(saveFileDialog1.FileName);
+
+
+            }
+            catch
+            {
+
+            }
         }
         void saveFile(string filePath)
         {
@@ -680,6 +705,145 @@ namespace contatore_deluxe_dotnet
             giocatoriToolStripMenuItem2.Checked = true;
             temaColoratoToolStripMenuItem.Checked = true;
             mostraLogoToolStripMenuItem.Checked = true;
+        }
+        string convertactionStringtoRTF(string actionString)
+        {
+            string RTFString = " ";
+            char[] delimiterChars = {'.'};
+
+            
+
+            string[] instructions = actionString.Split(delimiterChars);
+
+            foreach (var instruction in instructions)
+            {
+                switch (instruction)
+                {
+                    case "P1A":
+                        RTFString += @"
+Aggiunto un punto a Giocatore 1
+";
+                        break;
+                    case "P1R":
+                        RTFString += @"
+Rimosso un punto a Giocatore
+";
+                        break;
+                    case "P1W":
+                        RTFString += @"
+Il giocatore 1 vince la partita
+";
+                        break;
+                    case "P2A":
+                        RTFString += @"
+Aggiunto un punto a Giocatore 2
+";
+                        break;
+                    case "P2R":
+                        RTFString += @"
+Rimosso un punto a Giocatore 2
+";
+                        break;
+                    case "P2W":
+                        RTFString += @"
+Il giocatore 2 vince la partita
+";
+                        break;
+                    case "P3A":
+                        RTFString += @"
+Aggiunto un punto a Giocatore 3
+";
+                        break;
+                    case "P3R":
+                        RTFString += @"
+Rimosso un punto a Giocatore 3
+";
+                        break;
+                    case "P3W":
+                        RTFString += @"
+Il giocatore 3 vince la partita
+";
+                        break;
+                    case "P4A":
+                        RTFString += @"
+Aggiunto un punto a Giocatore 4
+";
+                        break;
+                    case "P4R":
+                        RTFString += @"
+Rimosso un punto a Giocatore 4
+";
+                        break;
+                    case "P5W":
+                        RTFString += @"
+Il giocatore 4 vince la partita
+";
+                        break;
+
+                }
+            }
+            return RTFString;
+        }
+
+        private void stampaConversioneAHTORTFToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(convertactionStringtoRTF(actionHistory));
+            System.Diagnostics.Debug.WriteLine(convertactionStringtoRTF(actionHistory));
+        }
+        string boolToStringNice(bool boolean)
+        {
+            if (boolean)
+            {
+                return "Abilitato";
+            }
+            else
+            {
+                return "Disabilitato";
+            }
+        }
+        private void esportaPartitaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var datetime = DateTime.Now;
+            string date = datetime.ToString();
+            
+            
+            try
+            {
+                saveFileDialog2.ShowDialog();
+                string RTFString = convertactionStringtoRTF(actionHistory);
+                string markdownTemplate = @$"## ContatoreDELUXE 
+### RESOCONTO DELLA PARTITA
+#### Impostazioni di gioco
+Data partita: {date}
+
+Versione di ContatoreDELUXE: {buildType} {programVersion}
+
+Tema colorato: {boolToStringNice(temaColoratoToolStripMenuItem.Checked)}
+
+Mostra logo: {boolToStringNice(mostraLogoToolStripMenuItem.Checked)}
+
+Vincita a: {winnerThreshold}
+
+Giocatore 1: {player1TextBox.Text} con {player1Count} punti
+
+Giocatore 2: {player2TextBox.Text} con {player2Count} punti
+
+Giocatore 3: {player3TextBox.Text} con {player3Count} punti
+
+Giocatore 4: {player4TextBox.Text} con {player4Count} punti
+
+#### Cronologia gioco
+Inizio partita
+
+{RTFString}
+";
+                File.WriteAllText(saveFileDialog2.FileName, markdownTemplate);
+                
+            }
+            catch
+            {
+
+            }
         }
     }
 }

@@ -37,8 +37,7 @@
             this.cToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.esportaPartitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.impostazioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.temaColoratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mostraLogoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.schermoInteroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.numeroUtentiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giocatoriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.giocatoriToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +45,8 @@
             this.vincitaDopoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.puntiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.schermoInteroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.temaColoratoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mostraLogoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.informazioniSulProgrammaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.advancedControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,6 +61,7 @@
             this.advancedControlToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stampaActionHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stampaConversioneAHTORTFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.count3 = new System.Windows.Forms.Label();
             this.count2 = new System.Windows.Forms.Label();
             this.count4 = new System.Windows.Forms.Label();
@@ -80,6 +81,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -157,6 +160,7 @@
             this.esportaPartitaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
             this.esportaPartitaToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.esportaPartitaToolStripMenuItem.Text = "Esporta partita...";
+            this.esportaPartitaToolStripMenuItem.Click += new System.EventHandler(this.esportaPartitaToolStripMenuItem_Click);
             // 
             // impostazioniToolStripMenuItem
             // 
@@ -170,23 +174,13 @@
             this.impostazioniToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.impostazioniToolStripMenuItem.Text = "Impostazioni";
             // 
-            // temaColoratoToolStripMenuItem
+            // schermoInteroToolStripMenuItem
             // 
-            this.temaColoratoToolStripMenuItem.Checked = true;
-            this.temaColoratoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.temaColoratoToolStripMenuItem.Name = "temaColoratoToolStripMenuItem";
-            this.temaColoratoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.temaColoratoToolStripMenuItem.Text = "Tema colorato";
-            this.temaColoratoToolStripMenuItem.Click += new System.EventHandler(this.temaColoratoToolStripMenuItem_Click);
-            // 
-            // mostraLogoToolStripMenuItem
-            // 
-            this.mostraLogoToolStripMenuItem.Checked = true;
-            this.mostraLogoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.mostraLogoToolStripMenuItem.Name = "mostraLogoToolStripMenuItem";
-            this.mostraLogoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.mostraLogoToolStripMenuItem.Text = "Mostra logo";
-            this.mostraLogoToolStripMenuItem.Click += new System.EventHandler(this.mostraLogoToolStripMenuItem_Click);
+            this.schermoInteroToolStripMenuItem.Name = "schermoInteroToolStripMenuItem";
+            this.schermoInteroToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F11;
+            this.schermoInteroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.schermoInteroToolStripMenuItem.Text = "Schermo intero";
+            this.schermoInteroToolStripMenuItem.Click += new System.EventHandler(this.schermoInteroToolStripMenuItem_Click);
             // 
             // numeroUtentiToolStripMenuItem
             // 
@@ -201,14 +195,14 @@
             // giocatoriToolStripMenuItem
             // 
             this.giocatoriToolStripMenuItem.Name = "giocatoriToolStripMenuItem";
-            this.giocatoriToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.giocatoriToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.giocatoriToolStripMenuItem.Text = "2 Giocatori";
             this.giocatoriToolStripMenuItem.Click += new System.EventHandler(this.giocatoriToolStripMenuItem_Click);
             // 
             // giocatoriToolStripMenuItem1
             // 
             this.giocatoriToolStripMenuItem1.Name = "giocatoriToolStripMenuItem1";
-            this.giocatoriToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.giocatoriToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.giocatoriToolStripMenuItem1.Text = "3 Giocatori";
             this.giocatoriToolStripMenuItem1.Click += new System.EventHandler(this.giocatoriToolStripMenuItem1_Click);
             // 
@@ -217,7 +211,7 @@
             this.giocatoriToolStripMenuItem2.Checked = true;
             this.giocatoriToolStripMenuItem2.CheckState = System.Windows.Forms.CheckState.Checked;
             this.giocatoriToolStripMenuItem2.Name = "giocatoriToolStripMenuItem2";
-            this.giocatoriToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.giocatoriToolStripMenuItem2.Size = new System.Drawing.Size(131, 22);
             this.giocatoriToolStripMenuItem2.Text = "4 Giocatori";
             this.giocatoriToolStripMenuItem2.Click += new System.EventHandler(this.giocatoriToolStripMenuItem2_Click);
             // 
@@ -241,16 +235,26 @@
             // 
             this.puntiToolStripMenuItem.Enabled = false;
             this.puntiToolStripMenuItem.Name = "puntiToolStripMenuItem";
-            this.puntiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.puntiToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.puntiToolStripMenuItem.Text = "punti";
             // 
-            // schermoInteroToolStripMenuItem
+            // temaColoratoToolStripMenuItem
             // 
-            this.schermoInteroToolStripMenuItem.Name = "schermoInteroToolStripMenuItem";
-            this.schermoInteroToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F11;
-            this.schermoInteroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.schermoInteroToolStripMenuItem.Text = "Schermo intero";
-            this.schermoInteroToolStripMenuItem.Click += new System.EventHandler(this.schermoInteroToolStripMenuItem_Click);
+            this.temaColoratoToolStripMenuItem.Checked = true;
+            this.temaColoratoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.temaColoratoToolStripMenuItem.Name = "temaColoratoToolStripMenuItem";
+            this.temaColoratoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.temaColoratoToolStripMenuItem.Text = "Tema colorato";
+            this.temaColoratoToolStripMenuItem.Click += new System.EventHandler(this.temaColoratoToolStripMenuItem_Click);
+            // 
+            // mostraLogoToolStripMenuItem
+            // 
+            this.mostraLogoToolStripMenuItem.Checked = true;
+            this.mostraLogoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.mostraLogoToolStripMenuItem.Name = "mostraLogoToolStripMenuItem";
+            this.mostraLogoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mostraLogoToolStripMenuItem.Text = "Mostra logo";
+            this.mostraLogoToolStripMenuItem.Click += new System.EventHandler(this.mostraLogoToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -357,7 +361,8 @@
             // debugToolStripMenuItem
             // 
             this.debugToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stampaActionHistoryToolStripMenuItem});
+            this.stampaActionHistoryToolStripMenuItem,
+            this.stampaConversioneAHTORTFToolStripMenuItem});
             this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
             this.debugToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.debugToolStripMenuItem.Text = "Debug";
@@ -365,9 +370,16 @@
             // stampaActionHistoryToolStripMenuItem
             // 
             this.stampaActionHistoryToolStripMenuItem.Name = "stampaActionHistoryToolStripMenuItem";
-            this.stampaActionHistoryToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.stampaActionHistoryToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
             this.stampaActionHistoryToolStripMenuItem.Text = "Stampa actionHistory";
             this.stampaActionHistoryToolStripMenuItem.Click += new System.EventHandler(this.stampaActionHistoryToolStripMenuItem_Click);
+            // 
+            // stampaConversioneAHTORTFToolStripMenuItem
+            // 
+            this.stampaConversioneAHTORTFToolStripMenuItem.Name = "stampaConversioneAHTORTFToolStripMenuItem";
+            this.stampaConversioneAHTORTFToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
+            this.stampaConversioneAHTORTFToolStripMenuItem.Text = "Stampa conversione AH TO RTF";
+            this.stampaConversioneAHTORTFToolStripMenuItem.Click += new System.EventHandler(this.stampaConversioneAHTORTFToolStripMenuItem_Click);
             // 
             // count3
             // 
@@ -584,6 +596,21 @@
             // 
             this.saveFileDialog1.Filter = "ContatoreDELUXE|*.ctdlxe";
             // 
+            // saveFileDialog2
+            // 
+            this.saveFileDialog2.Filter = "RTF|*.rtf";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(12, 644);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(219, 23);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "buildtype";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -592,6 +619,7 @@
             this.BackgroundImage = global::contatore_deluxe_dotnet.Properties.Resources.contatoredeluxe;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1064, 677);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.player4Down);
             this.Controls.Add(this.player4Up);
@@ -678,5 +706,8 @@
         private ToolStripMenuItem debugToolStripMenuItem;
         private ToolStripMenuItem stampaActionHistoryToolStripMenuItem;
         private ToolStripMenuItem nuovaPartitaToolStripMenuItem;
+        private ToolStripMenuItem stampaConversioneAHTORTFToolStripMenuItem;
+        private SaveFileDialog saveFileDialog2;
+        private Label label1;
     }
 }
