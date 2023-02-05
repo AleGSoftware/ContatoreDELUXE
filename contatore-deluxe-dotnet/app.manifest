@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <assembly manifestVersion="1.0" xmlns="urn:schemas-microsoft-com:asm.v1">
-	<fileAssociation xmlns="urn:schemas-microsoft-com:clickonce.v1" extension=".ctdlxe" description="Salvataggio ContatoreDELUXE" progid="ContatoreDELUXE.SaveFile" defaultIcon="contatoredeluxe-icon-merged.ico" />
+	
 	<assemblyIdentity version="1.0.0.0" name="MyApplication.app"/>
   <trustInfo xmlns="urn:schemas-microsoft-com:asm.v2">
     <security>
