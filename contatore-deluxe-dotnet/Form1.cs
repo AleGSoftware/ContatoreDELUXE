@@ -1,5 +1,6 @@
 using Markdig;
 using System.Diagnostics.Contracts;
+using System.Linq.Expressions;
 using WkHtmlToPdfDotNet;
 
 namespace contatore_deluxe_dotnet
@@ -9,8 +10,7 @@ namespace contatore_deluxe_dotnet
         string programVersion = "1.0";
         string buildType = "Beta";
         string[] devBuilds = new string[] {"Developement", "Release Candidate", "Beta", "Master", "Alpha"};
-        
-        public Form1()
+        public Form1(string[] args)
         {
             InitializeComponent();
             if (!((IList<string>)devBuilds).Contains(buildType))
@@ -22,8 +22,19 @@ namespace contatore_deluxe_dotnet
                 debugToolStripMenuItem.Visible = true;
                 label1.Visible = true;
                 label1.Text = buildType;
-            }
+                try
+                {
+                    //MessageBox.Show(Convert.ToString(args[0]));
+                }
+                catch
+                {
 
+                }
+            }
+            if (args.Length > 0)
+            {
+                loadFile(args[0]);
+            }
         }
         int player1Count;
         int player2Count;

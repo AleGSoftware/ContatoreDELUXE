@@ -71,6 +71,26 @@ namespace contatore_deluxe_dotnet.Properties {
         }
         
         /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Icon simile a (Icona).
+        /// </summary>
+        internal static System.Drawing.Icon contatoredeluxe_icon_merged {
+            get {
+                object obj = ResourceManager.GetObject("contatoredeluxe_icon_merged", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Icon simile a (Icona).
+        /// </summary>
+        internal static System.Drawing.Icon contatoredeluxe_icon_transparent_merged {
+            get {
+                object obj = ResourceManager.GetObject("contatoredeluxe_icon_transparent_merged", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap contatoredeluxe_small {
