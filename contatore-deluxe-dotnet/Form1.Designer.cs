@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.partitaCorrenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuovaPartitaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -598,7 +599,7 @@
             // 
             // saveFileDialog2
             // 
-            this.saveFileDialog2.Filter = "RTF|*.rtf";
+            this.saveFileDialog2.Filter = "Documento PDF|*.pdf|Documento Markdown|*.md|Documento HTML|*.html";
             // 
             // label1
             // 
@@ -639,6 +640,7 @@
             this.Controls.Add(this.count3);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(1080, 716);
             this.Name = "Form1";

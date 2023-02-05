@@ -1,5 +1,6 @@
+using Markdig;
 using System.Diagnostics.Contracts;
-using System.Text.Json;
+using WkHtmlToPdfDotNet;
 
 namespace contatore_deluxe_dotnet
 {
@@ -805,8 +806,8 @@ Il giocatore 4 vince la partita
         {
             var datetime = DateTime.Now;
             string date = datetime.ToString();
-            
-            
+
+
             try
             {
                 saveFileDialog2.ShowDialog();
@@ -834,11 +835,50 @@ Giocatore 4: {player4TextBox.Text} con {player4Count} punti
 
 #### Cronologia gioco
 Inizio partita
-
 {RTFString}
+
+© AleGSoftware 2023
 ";
-                File.WriteAllText(saveFileDialog2.FileName, markdownTemplate);
-                
+
+                if (saveFileDialog2.FileName != "")
+                {
+                    if (saveFileDialog2.FilterIndex == 1)
+                    {
+                        string html = Markdown.ToHtml(markdownTemplate);
+                        File.WriteAllText(saveFileDialog2.FileName, "<style>h2, h3, h4, p {font-family: Arial}</style>\n" + html);
+                        var converter = new BasicConverter(new PdfTools());
+                        var doc = new HtmlToPdfDocument()
+                        {
+                            GlobalSettings = {
+                                ColorMode = ColorMode.Color,
+                                Orientation = WkHtmlToPdfDotNet.Orientation.Portrait,
+                                PaperSize = PaperKind.A4Plus,
+                               },
+                            Objects = {
+                            new ObjectSettings() {
+                                PagesCount = true,
+                                HtmlContent = html,
+                                WebSettings = { DefaultEncoding = "utf-8" },
+                                HeaderSettings = { FontSize = 13, Right = "Pagina [page] di [toPage]", Line = false, Spacing = 2.812 }
+                            }
+                            }
+                        };
+                        byte[] pdf = converter.Convert(doc);
+                        using var stream = File.Create(saveFileDialog2.FileName);
+                        stream.Write(pdf, 0, pdf.Length);
+
+                    }
+                    else if (saveFileDialog2.FilterIndex == 2)
+                    {
+                        File.WriteAllText(saveFileDialog2.FileName, markdownTemplate);
+                    }
+                    else if (saveFileDialog2.FilterIndex == 3)
+                    {
+                        string html = Markdown.ToHtml(markdownTemplate);
+                        File.WriteAllText(saveFileDialog2.FileName, "<style>h2, h3, h4, p {font-family: Segoe UI}</style>\n" + html);
+                    }
+
+                }
             }
             catch
             {
