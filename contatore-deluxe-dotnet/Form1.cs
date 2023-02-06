@@ -8,7 +8,7 @@ namespace contatore_deluxe_dotnet
     public partial class Form1 : Form
     {
         string programVersion = "1.0";
-        string buildType = "Release Candidate";
+        string buildType = "Release";
         string[] devBuilds = new string[] {"Developement", "Release Candidate", "Beta", "Master", "Alpha"};
         public Form1(string[] args)
         {
