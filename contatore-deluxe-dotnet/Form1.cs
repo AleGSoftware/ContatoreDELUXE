@@ -641,8 +641,26 @@ namespace contatore_deluxe_dotnet
                                 player4Down.ForeColor = Color.Black;
                             }
                             changePlayerCount(playerCountFile);
+                            switch (playerCountFile)
+                            {
+                                case 2:
+                                    giocatoriToolStripMenuItem.Checked = true;
+                                    giocatoriToolStripMenuItem2.Checked = false;
+                                    giocatoriToolStripMenuItem1.Checked = false;
+                                    break;
+                                case 3:
+                                    giocatoriToolStripMenuItem.Checked = false;
+                                    giocatoriToolStripMenuItem2.Checked = false;
+                                    giocatoriToolStripMenuItem1.Checked = true;
+                                    break;
+                                case 4:
+                                    giocatoriToolStripMenuItem.Checked = false;
+                                    giocatoriToolStripMenuItem2.Checked = true;
+                                    giocatoriToolStripMenuItem1.Checked = false;
+                                    break;
+                            }
                             mostraLogoToolStripMenuItem.Checked = mostraLogo;
-                            if (mostraLogoToolStripMenuItem.Checked)
+                            if (mostraLogo)
                             {
                                 if (giocatoriToolStripMenuItem.Checked)
                                 {
