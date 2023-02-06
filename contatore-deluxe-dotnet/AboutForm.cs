@@ -22,6 +22,7 @@ namespace contatore_deluxe_dotnet
 
         private void button1_Click(object sender, EventArgs e)
         {
+            File.Delete(Path.GetTempPath() + @"\gpl-3.0.rtf");
             File.WriteAllText(Path.GetTempPath() + @"\gpl-3.0.rtf", Resources.gpl_3_0);
             Process.Start("write.exe", Path.GetTempPath() + @"\gpl-3.0.rtf");
         }
